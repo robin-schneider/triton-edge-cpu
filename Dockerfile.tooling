@@ -1,0 +1,19 @@
+# syntax=docker/dockerfile:1.7
+ARG DOCKER_CLI_VERSION=29.0.2
+FROM docker:${DOCKER_CLI_VERSION}-cli
+
+RUN apk add --no-cache \
+      bash \
+      coreutils \
+      curl \
+      git \
+      jq \
+      py3-distro \
+      py3-pip \
+      py3-requests \
+      python3 \
+      shellcheck
+
+ENTRYPOINT []
+CMD ["bash"]
+

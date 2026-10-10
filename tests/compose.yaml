@@ -1,0 +1,9 @@
+services:
+  triton:
+    command: >-
+      --model-repository=/models --model-control-mode=explicit ${TEST_LOAD_ARGS:-}
+      --strict-readiness=true --allow-http=true --allow-grpc=true
+      --allow-client-shm=true --allow-metrics=true --allow-cpu-metrics=true
+      --log-info=true --log-warning=true --log-error=true
+    volumes:
+      - ./.work/test-models:/models:ro

@@ -1,0 +1,37 @@
+# syntax=docker/dockerfile:1.7
+ARG UPSTREAM_IMAGE=local/triton-cpu-artifacts:26.09
+FROM ${UPSTREAM_IMAGE} AS runtime-files
+ARG BACKENDS=pytorch,onnxruntime,openvino,python
+ARG KEEP_ONNX_TOOLS=0
+ARG DEDUP_OPENVINO=1
+ARG OPENVINO_FRONTENDS=all
+ARG STRIP_DEBUG=0
+COPY scripts/assemble-runtime.sh /tmp/assemble-runtime.sh
+COPY LICENSE /tmp/project-license
+RUN bash /tmp/assemble-runtime.sh
+
+FROM ubuntu:24.04 AS runtime
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl \
+    && rm -rf /var/lib/apt/lists/* \
+    && userdel ubuntu && groupadd -g 1000 triton-server \
+    && useradd -u 1000 -g 1000 -M triton-server
+ARG BACKENDS=pytorch,onnxruntime,openvino,python
+COPY --from=runtime-files /runtime-root/ /
+ENV PATH=/opt/tritonserver/bin:${PATH} \
+    LD_LIBRARY_PATH=/opt/tritonserver/lib:/usr/local/cuda/targets/x86_64-linux/lib:/usr/local/cuda/lib64/stubs:/opt/hpcx/ucc/lib:/opt/hpcx/ucx/lib \
+    TRITON_SERVER_GPU_ENABLED=0 \
+    TRITON_SERVER_VERSION=2.73.0 \
+    NVIDIA_TRITON_SERVER_VERSION=26.09 \
+    TRITON_BACKENDS=${BACKENDS} \
+    UCX_MEM_EVENTS=no
+LABEL org.opencontainers.image.title="CPU-only Triton" \
+    io.triton-cpu.scaffold.license="BSD-3-Clause" \
+    org.opencontainers.image.description="Build scaffold is BSD-3-Clause; bundled components retain their own licenses"
+RUN if echo ",${BACKENDS}," | grep -q ",python,"; then \
+      PYTHONDONTWRITEBYTECODE=1 python3 -c "import numpy; import ssl; assert numpy.ones(4).sum() == 4"; \
+    fi
+USER 1000:1000
+WORKDIR /opt/tritonserver
+EXPOSE 8000 8001 8002
+ENTRYPOINT ["tritonserver"]
+CMD ["--model-repository=/models"]

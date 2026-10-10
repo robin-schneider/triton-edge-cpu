@@ -1,0 +1,23 @@
+diff --git a/tools/gen_openvino_dockerfile.py b/tools/gen_openvino_dockerfile.py
+--- a/tools/gen_openvino_dockerfile.py
++++ b/tools/gen_openvino_dockerfile.py
+@@ -109,7 +109,9 @@ def gpu_plugin_supported():
+     # natively: CMakeLists.txt passes no --platform to `docker build`, so the
+     # host architecture is the target architecture. Same assumption as
+     # build_parallelism(), which sizes the build from host CPU and memory.
+-    return platform.machine() == "x86_64"
++    # This downstream build deliberately excludes every non-CPU device plugin.
++    # Returning false also omits the otherwise-required OpenCL loader copy.
++    return False
+ 
+ 
+ def dockerfile_common():
+@@ -210,6 +212,8 @@ RUN cmake \\
+         -DCMAKE_INSTALL_PREFIX=/workspace/install \\
+         -DENABLE_TESTS=OFF \\
+         -DENABLE_VALIDATION_SET=OFF \\
++        -DENABLE_INTEL_GPU=OFF \\
++        -DENABLE_INTEL_NPU=OFF \\
+         -S /workspace/openvino \\
+         -B /workspace/openvino/build
+ """

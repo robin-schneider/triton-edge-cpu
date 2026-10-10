@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+# One-command entrypoint. Docker owns all compilers, SDKs and Python packages.
+set -Eeuo pipefail
+root=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+# shellcheck source=scripts/common.sh
+source "${root}/scripts/common.sh"
+
+usage() {
+  cat <<'EOF'
+Usage: ./triton [reproduce|build|test|run|stop|assemble|artifacts|help] [options]
+
+No arguments: fetch sources/dependencies, build all four CPU backends,
+generate development TLS certificates, test BLS/inference/metrics, and collect
+the image metadata, SPDX SBOM, dependency-size reports and checksums.
+
+  build                 Build the default image without running acceptance tests
+  test                  Test the current TRITON_IMAGE, creating dev TLS if needed
+  run                   Serve models/ over HTTPS 8443 and gRPCS 8444
+  stop                  Stop the local Compose stack
+  assemble [options]    Repackage compiled artifacts (see --help)
+  artifacts             Collect provenance, SBOM and measurements
+  --reuse-artifacts     For reproduce/build: reuse existing core/framework build
+                        images; build the pinned Python backend and final image
+  --export              For reproduce/artifacts: also save a portable image tar
+EOF
+}
+command=reproduce
+if [[ $# -gt 0 && "$1" != --* ]]; then command=$1; shift; fi
+if [[ "${command}" == help || "${1:-}" == --help && "${command}" != assemble ]]; then usage; exit 0; fi
+if [[ "${command}" == assemble ]]; then exec "${root}/scripts/assemble.sh" "$@"; fi
+build_args=()
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --reuse-artifacts)
+      [[ "${command}" == reproduce || "${command}" == build ]] || { echo "--reuse-artifacts requires reproduce or build." >&2; exit 2; }
+      build_args+=(--reuse-artifacts) ;;
+    --export)
+      [[ "${command}" == reproduce || "${command}" == artifacts ]] || { echo "--export requires reproduce or artifacts." >&2; exit 2; }
+      export EXPORT_IMAGE=1 ;;
+    *) echo "Unknown option: $1" >&2; usage >&2; exit 2 ;;
+  esac
+  shift
+done
+case "${command}" in reproduce|build|test|run|stop|artifacts) ;; *) usage >&2; exit 2 ;; esac
+require_docker
+docker compose version >/dev/null || { echo 'Docker Compose v2 is required.' >&2; exit 1; }
+cd "${root}"
+logs="${root}/artifacts/logs/$(date -u +%Y%m%dT%H%M%SZ)"
+mkdir -p "${logs}"
+step() {
+  local name=$1
+  shift
+  echo "${name}... (log: ${logs}/${name}.log)"
+  if "$@" > "${logs}/${name}.log" 2>&1; then
+    echo "${name}: passed"
+  else
+    echo "${name}: failed. Last log lines:" >&2
+    tail -n 30 "${logs}/${name}.log" >&2
+    exit 1
+  fi
+}
+ensure_certs() {
+  if [[ ! -f certs/ca.crt || ! -f certs/server.crt || ! -f certs/server.key ]]; then
+    "${root}/scripts/generate-dev-certs.sh"
+  fi
+}
+case "${command}" in
+  reproduce)
+    step build "${root}/scripts/build.sh" "${build_args[@]}"
+    step certificates ensure_certs
+    step test "${root}/scripts/test-inference.sh"
+    step artifacts "${root}/scripts/collect-artifacts.sh"
+    echo "Ready: ${TRITON_IMAGE}. Artifacts: artifacts/${TRITON_CONTAINER_VERSION}/"
+    echo 'Verified demo is running. Use ./triton run to serve models/, or ./triton stop.' ;;
+  build) step build "${root}/scripts/build.sh" "${build_args[@]}" ;;
+  test) step certificates ensure_certs; step test "${root}/scripts/test-inference.sh" ;;
+  run)
+    if ! docker image inspect "${TRITON_IMAGE}" >/dev/null 2>&1; then
+      step build "${root}/scripts/build.sh" "${build_args[@]}"
+    fi
+    step certificates ensure_certs
+    export TRITON_IMAGE GATEWAY_IMAGE
+    docker compose up --detach --build --wait --force-recreate ;;
+  stop) docker compose down ;;
+  artifacts) step artifacts "${root}/scripts/collect-artifacts.sh" ;;
+esac

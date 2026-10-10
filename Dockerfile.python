@@ -1,0 +1,26 @@
+# syntax=docker/dockerfile:1.7
+ARG BUILD_IMAGE=tritonserver_buildbase:latest
+ARG CORE_IMAGE=tritonserver:latest
+FROM ${BUILD_IMAGE} AS python-build
+ARG PYTHON_BACKEND_COMMIT=945764622b31dc48e881e6fb109971503a29c637
+ARG TRITON_GIT_REF=r26.09
+ARG BUILD_JOBS=8
+WORKDIR /python-build
+RUN git init source && git -C source remote add origin https://github.com/triton-inference-server/python_backend.git \
+    && git -C source fetch --depth=1 origin ${PYTHON_BACKEND_COMMIT} \
+    && git -C source checkout --detach FETCH_HEAD \
+    && git -C source submodule update --init --recursive
+RUN cmake -S source -B build -DCMAKE_BUILD_TYPE=Release -DTRITON_ENABLE_GPU=OFF \
+    -DTRITON_ENABLE_METRICS=ON -DTRITON_ENABLE_STATS=ON \
+    -DTRITON_BACKEND_REPO_TAG=${TRITON_GIT_REF} -DTRITON_COMMON_REPO_TAG=${TRITON_GIT_REF} \
+    -DTRITON_CORE_REPO_TAG=${TRITON_GIT_REF} -DPython3_EXECUTABLE=/usr/bin/python3 \
+    -DCMAKE_INSTALL_PREFIX=/python-install \
+    && cmake --build build --parallel ${BUILD_JOBS} \
+    && cmake --install build
+
+# Combined artifact source, never deployed. Only selected runtime files are
+# copied by Dockerfile.runtime; no Python build tools cross that boundary.
+FROM ${CORE_IMAGE} AS artifacts
+COPY --from=python-build /python-install/backends/python /opt/tritonserver/backends/python
+RUN apt-get update && apt-get install -y --no-install-recommends python3 libpython3.12t64 libarchive13t64 python3-numpy \
+    && rm -rf /var/lib/apt/lists/*

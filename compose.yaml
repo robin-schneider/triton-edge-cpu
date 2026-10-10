@@ -1,0 +1,63 @@
+name: triton-cpu
+
+services:
+  triton:
+    image: ${TRITON_IMAGE:-local/tritonserver-cpu:26.09}
+    user: "1000:1000"
+    command:
+      - --model-repository=/models
+      - --exit-on-error=false
+      - --strict-readiness=true
+      - --allow-http=true
+      - --allow-grpc=true
+      - --allow-client-shm=true
+      - --allow-metrics=true
+      - --allow-cpu-metrics=true
+      - --log-info=true
+      - --log-warning=true
+      - --log-error=true
+    shm_size: ${TRITON_SHM_SIZE:-1gb}
+    ipc: shareable
+    volumes:
+      - ./models:/models:ro
+    expose:
+      - "8000"
+      - "8001"
+      - "8002"
+    tmpfs:
+      - /tmp:size=256m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://127.0.0.1:8000/v2/health/ready"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+      start_period: 20s
+    restart: unless-stopped
+
+  gateway:
+    image: ${GATEWAY_IMAGE:-local/triton-cpu-gateway:26.09}
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+      target: gateway
+    depends_on:
+      triton:
+        condition: service_healthy
+    ports:
+      - "${HTTPS_PORT:-8443}:8443"
+      - "${GRPCS_PORT:-8444}:8444"
+    volumes:
+      - ./certs:/etc/triton/tls:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+networks:
+  default:
+    name: triton-cpu
+

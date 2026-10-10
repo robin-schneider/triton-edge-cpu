@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package inference;
+
+service GRPCInferenceService {
+  rpc ServerLive(ServerLiveRequest) returns (ServerLiveResponse);
+}
+
+message ServerLiveRequest {}
+
+message ServerLiveResponse {
+  bool live = 1;
+}
+
