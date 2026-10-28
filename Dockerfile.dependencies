@@ -1,0 +1,83 @@
+# Package and source inputs are acquired and hash-verified before this build.
+# Every RUN executes without network access (scripts/prepare-dependencies.sh).
+ARG UBUNTU_IMAGE=docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55
+ARG NVIDIA_IMAGE=nvcr.io/nvidia/tritonserver:26.09-py3-min@sha256:324f6a131473ec7d2796dc2b1264594d2fc46033df96b0879fd0ff0aee1a9f65
+ARG PYTHON_IMAGE=docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+ARG SHELLCHECK_IMAGE=docker.io/koalaman/shellcheck:v0.10.0@sha256:2097951f02e735b613f4a34de20c40f937a6c8f18ecb170612c88c34517221fb
+FROM ${SHELLCHECK_IMAGE} AS shellcheck
+FROM scratch AS sources
+COPY sources/ /opt/locked/
+COPY archives/ /opt/locked/archives/
+COPY cmake/ /opt/locked/
+
+FROM ${UBUNTU_IMAGE} AS core
+ENV DEBIAN_FRONTEND=noninteractive PIP_BREAK_SYSTEM_PACKAGES=1 \
+    PIP_NO_INDEX=1 PIP_FIND_LINKS=/opt/locked/wheels \
+    GIT_CONFIG_GLOBAL=/opt/locked/gitconfig GIT_CONFIG_SYSTEM=/dev/null GIT_ALLOW_PROTOCOL=file \
+    CMAKE_POLICY_VERSION_MINIMUM=3.5 CMAKE_TOOLCHAIN_FILE=/opt/locked/core.cmake \
+    PYTHONHASHSEED=0 TZ=UTC LC_ALL=C.UTF-8
+COPY apt/core/ /tmp/debs/
+COPY install-locked-debs.sh /tmp/install-locked-debs.sh
+RUN bash /tmp/install-locked-debs.sh && rm /tmp/install-locked-debs.sh
+COPY wheels/core/ /opt/locked/wheels/
+COPY locks/core.requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-deps --require-hashes -r /tmp/requirements.txt
+COPY boost/boost/ /usr/include/boost/
+COPY --from=shellcheck /bin/shellcheck /usr/local/bin/shellcheck
+COPY --from=sources /opt/locked/ /opt/locked/
+ENTRYPOINT []
+CMD ["bash"]
+
+FROM ${NVIDIA_IMAGE} AS onnxruntime
+ENV DEBIAN_FRONTEND=noninteractive PIP_BREAK_SYSTEM_PACKAGES=1 \
+    PIP_NO_INDEX=1 PIP_FIND_LINKS=/opt/locked/wheels \
+    GIT_CONFIG_GLOBAL=/opt/locked/gitconfig GIT_CONFIG_SYSTEM=/dev/null GIT_ALLOW_PROTOCOL=file \
+    PYTHONHASHSEED=0 TZ=UTC LC_ALL=C.UTF-8
+COPY apt/onnxruntime/ /tmp/debs/
+COPY install-locked-debs.sh /tmp/install-locked-debs.sh
+RUN bash /tmp/install-locked-debs.sh && rm /tmp/install-locked-debs.sh
+COPY wheels/onnxruntime/ /opt/locked/wheels/
+COPY locks/onnxruntime.requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-deps --require-hashes -r /tmp/requirements.txt
+COPY --from=sources /opt/locked/ /opt/locked/
+ENTRYPOINT []
+
+FROM ${NVIDIA_IMAGE} AS openvino
+ENV DEBIAN_FRONTEND=noninteractive PIP_BREAK_SYSTEM_PACKAGES=1 \
+    PIP_NO_INDEX=1 PIP_FIND_LINKS=/opt/locked/wheels \
+    GIT_CONFIG_GLOBAL=/opt/locked/gitconfig GIT_CONFIG_SYSTEM=/dev/null GIT_ALLOW_PROTOCOL=file \
+    TBBROOT=/opt/locked/tbb PYTHONHASHSEED=0 TZ=UTC LC_ALL=C.UTF-8
+COPY apt/openvino/ /tmp/debs/
+COPY install-locked-debs.sh /tmp/install-locked-debs.sh
+RUN bash /tmp/install-locked-debs.sh && rm /tmp/install-locked-debs.sh
+COPY wheels/openvino/ /opt/locked/wheels/
+COPY locks/openvino.requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-deps --require-hashes -r /tmp/requirements.txt
+COPY --from=sources /opt/locked/ /opt/locked/
+COPY tbb/ /opt/locked/tbb/
+ENTRYPOINT []
+
+FROM ${UBUNTU_IMAGE} AS python
+ENV DEBIAN_FRONTEND=noninteractive PIP_BREAK_SYSTEM_PACKAGES=1 \
+    PIP_NO_INDEX=1 PIP_FIND_LINKS=/opt/locked/wheels \
+    TRITON_SERVER_GPU_ENABLED=0 TRITON_SERVER_VERSION=2.73.0 NVIDIA_TRITON_SERVER_VERSION=26.09
+COPY apt/python/ /tmp/debs/
+COPY install-locked-debs.sh /tmp/install-locked-debs.sh
+RUN bash /tmp/install-locked-debs.sh && rm /tmp/install-locked-debs.sh
+COPY wheels/python/ /opt/locked/wheels/
+COPY locks/python.requirements.txt /tmp/requirements.txt
+RUN pip3 install --ignore-installed --no-deps --require-hashes -r /tmp/requirements.txt
+ENTRYPOINT []
+
+FROM ${UBUNTU_IMAGE} AS runtime
+COPY apt/runtime/ /tmp/debs/
+COPY install-locked-debs.sh /tmp/install-locked-debs.sh
+RUN bash /tmp/install-locked-debs.sh && rm /tmp/install-locked-debs.sh
+ENTRYPOINT []
+
+FROM ${PYTHON_IMAGE} AS tests
+ENV PIP_NO_INDEX=1 PIP_FIND_LINKS=/opt/locked/wheels PYTHONHASHSEED=0
+COPY wheels/tests/ /opt/locked/wheels/
+COPY locks/tests.requirements.txt /tmp/requirements.txt
+RUN pip install --no-deps --require-hashes -r /tmp/requirements.txt && rm -rf /opt/locked/wheels
+ENTRYPOINT []

@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "platform": "linux/amd64",
+  "environments": {
+    "tooling": {
+      "image": "local/triton-cpu-build-tools:26.09",
+      "id": "sha256:7c6c386e4dfe4123044c519e2cd95c150c2edfeeba3f2de570cc62e62cf3fbc1",
+      "origin": "local/triton-cpu-build-tools:26.09"
+    },
+    "core": {
+      "image": "local/triton-lock-audit:26.09",
+      "id": "sha256:e9039dc7c1689ab2971b9067ac7a99b25242f0a8390fe556ae982ff9991e7bd7",
+      "origin": "local/triton-lock-audit:26.09"
+    },
+    "onnxruntime": {
+      "image": "tritonserver_onnxruntime:latest",
+      "id": "sha256:1262f8f64e35bfc3979dbfe79ef6de896891da95645ddff83fc50e83b8a20399",
+      "origin": "tritonserver_onnxruntime:latest"
+    },
+    "openvino": {
+      "image": "tritonserver_openvino:latest",
+      "id": "sha256:71f5505ec7fcdaf3a5af6850130997c9ee88c662613901202df3e1c9ce17df98",
+      "origin": "tritonserver_openvino:latest"
+    },
+    "python": {
+      "image": "local/triton-cpu-artifacts:26.09",
+      "id": "sha256:3fd8951bcc398ae988246c5db9958743c94eba42c2d40de6b74532d6f715c103",
+      "origin": "local/triton-cpu-artifacts:26.09"
+    },
+    "runtime": {
+      "image": "local/tritonserver-cpu:26.09",
+      "id": "sha256:9d9b99fdf0d67717d767cc82c3e017920e1b5d3d38696110af8912a357d511a5",
+      "origin": "local/tritonserver-cpu:26.09"
+    },
+    "tests": {
+      "image": "local/triton-cpu-tests:26.09",
+      "id": "sha256:738a6d8918ff7d984c58eecb81a8cabd71f6ca05d2d5e9ffe4537ae775d83e7f",
+      "origin": "local/triton-cpu-tests:26.09"
+    },
+    "gateway": {
+      "image": "local/triton-cpu-gateway:26.09",
+      "id": "sha256:9b4cea39b39575fd10baa673fc23c41c95540b7f5fc30ca4fc03c2258ceed5a1",
+      "origin": "local/triton-cpu-gateway:26.09"
+    },
+    "certs": {
+      "image": "local/triton-cpu-gateway:26.09-cert-tools",
+      "id": "sha256:3ad25c0c41b73df77b6b9c04fdf46dbb731b24c5b089671edead7254889322ab",
+      "origin": "local/triton-cpu-gateway:26.09-cert-tools"
+    }
+  }
+}

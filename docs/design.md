@@ -2,31 +2,38 @@
 
 ## Sources and build stages
 
-`config/build.env` selects Triton 2.73.0 / release 26.09 and pins the server and
-Python backend commits. `config/source-lock.tsv` records the other component
-commits. Before compilation, generation checks NVIDIA's release branch heads
-against that lock and fails on drift. Update the release inputs and lock
-together when upgrading.
+`config/build.env` selects Triton 2.73.0 / release 26.09. The complete Git
+closure is in `config/sources.lock.json`; every checkout uses a full commit
+hash, a depth-one fetch, and no tags. Upstream release branches may move without
+changing this build. Nested submodules resolve through local locked mirrors.
+
+`config/images.lock.json` pins public OCI inputs by digest and restricts them
+to Docker Hub and NVIDIA NGC. `config/locks/` pins the apt closure and exact
+Python wheels, including test packages and isolated wheel-build dependencies.
+`config/archives.lock.json` records SHA-256 hashes for source and binary archives
+already used by the previous build. No custom registry or image publishing is
+required. See [reproducibility](reproducibility.md) for the acquisition boundary
+and validation commands.
 
 The build has three boundaries:
 
-1. A Docker tooling image fetches sources and runs NVIDIA's `build.py` to
-   generate and execute the core and framework build stages.
-2. `Dockerfile.python` compiles the Python backend and combines it with those
-   artifacts, Python 3.12 and NumPy.
-3. `Dockerfile.runtime` resolves runtime dependencies from the artifact image
-   and copies them into a clean Ubuntu 24.04 image. It excludes compilers,
-   SDK headers, build trees and test dependencies.
+1. Bootstrap checks out Git sources and stages all checksum-verified artifact
+   inputs. `Dockerfile.dependencies` reconstructs compiler, framework, runtime
+   and test environments from those inputs with network disabled.
+2. NVIDIA's pinned generator produces core/framework recipes. Reviewed
+   transformations substitute local source checkouts and archive inputs, remove
+   live package resolution, and disable networking for every compiler container and
+   nested Docker build. `Dockerfile.python` adds the Python backend.
+3. `Dockerfile.runtime` copies the selected backend artifacts and their ELF
+   dependencies into a locked Ubuntu runtime environment.
 
 The project is mounted at the same absolute path inside the tooling container
 so the host Docker daemon can resolve nested bind mounts. Dependency resolution
-uses the artifact image's libraries, never the host's libraries. Ubuntu matches
-the generated build stages to keep native library ABIs consistent.
-
-Source revisions are checked, but package repositories and container tags can
-change; builds are not guaranteed to be bit-for-bit identical. Artifact
-collection records build settings, generated recipes, source commits, image
-metadata, an SPDX SBOM and checksums.
+uses the artifact image's libraries, never the host's libraries. All compiler
+inputs are fixed; `SOURCE_DATE_EPOCH`, locale and Python hashing are controlled.
+The final runtime is repackaged with deterministic filesystem and image
+metadata. Comparing independent clean build IDs verifies output identity;
+package and source checks verify the availability and completeness of inputs.
 
 ## CPU runtime
 

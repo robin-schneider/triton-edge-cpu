@@ -1,0 +1,268 @@
+[
+  {
+    "package": "cmake-data",
+    "version": "3.28.3-1build7",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/c/cmake/cmake-data_3.28.3-1build7_all.deb",
+    "sha256": "20a3b644211ce82f35c24f1f5052199adeb0ac159978a8740fd6c0959611557f",
+    "filename": "cmake-data_3.28.3-1build7_all.deb"
+  },
+  {
+    "package": "cmake:amd64",
+    "version": "3.28.3-1build7",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/c/cmake/cmake_3.28.3-1build7_amd64.deb",
+    "sha256": "4b0a7f8c0daf27b26b46997d994ae5d1ee7a3d11dfcda9f7627bb1462c162295",
+    "filename": "cmake_3.28.3-1build7_amd64.deb"
+  },
+  {
+    "package": "libarchive13t64:amd64",
+    "version": "3.7.2-2ubuntu0.9",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/liba/libarchive/libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb",
+    "sha256": "b4e618d2237da9b00b88947113ebad8f93134f07f670a2df59cc5201c6c4307f",
+    "filename": "libarchive13t64_3.7.2-2ubuntu0.9_amd64.deb"
+  },
+  {
+    "package": "libblkid-dev:amd64",
+    "version": "2.39.3-9ubuntu6.6",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/u/util-linux/libblkid-dev_2.39.3-9ubuntu6.6_amd64.deb",
+    "sha256": "49ef9eb8716c4d7ec8921b87328052e75efecf89ab5975b5e43360e8cb7aa27c",
+    "filename": "libblkid-dev_2.39.3-9ubuntu6.6_amd64.deb"
+  },
+  {
+    "package": "libffi-dev:amd64",
+    "version": "3.4.6-1build1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/libf/libffi/libffi-dev_3.4.6-1build1_amd64.deb",
+    "sha256": "7009959b8a3b77206325026917fb45150ac81bf6139468abc0841d5a29c8619d",
+    "filename": "libffi-dev_3.4.6-1build1_amd64.deb"
+  },
+  {
+    "package": "libgirepository-2.0-0:amd64",
+    "version": "2.80.0-6ubuntu3.9",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/g/glib2.0/libgirepository-2.0-0_2.80.0-6ubuntu3.9_amd64.deb",
+    "sha256": "784749ffb94d1726cb207a227f8dd005b6d518c6dfcd04b94f02f16537c2d0c6",
+    "filename": "libgirepository-2.0-0_2.80.0-6ubuntu3.9_amd64.deb"
+  },
+  {
+    "package": "libglib2.0-0t64:amd64",
+    "version": "2.80.0-6ubuntu3.9",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/g/glib2.0/libglib2.0-0t64_2.80.0-6ubuntu3.9_amd64.deb",
+    "sha256": "a66ef54888a18e20b55dd3988177f6029caa81dc16198c043a715500b62cf06f",
+    "filename": "libglib2.0-0t64_2.80.0-6ubuntu3.9_amd64.deb"
+  },
+  {
+    "package": "libglib2.0-bin:amd64",
+    "version": "2.80.0-6ubuntu3.9",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/g/glib2.0/libglib2.0-bin_2.80.0-6ubuntu3.9_amd64.deb",
+    "sha256": "e0e2ccb6ee3c0c8f3556417872a4340a2e0ddb3e50af6de3f8e5fc999c98693f",
+    "filename": "libglib2.0-bin_2.80.0-6ubuntu3.9_amd64.deb"
+  },
+  {
+    "package": "libglib2.0-data",
+    "version": "2.80.0-6ubuntu3.9",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/g/glib2.0/libglib2.0-data_2.80.0-6ubuntu3.9_all.deb",
+    "sha256": "87b6c824ce057baed1144474640e083f167096453393f93727f8d3a1d75a2707",
+    "filename": "libglib2.0-data_2.80.0-6ubuntu3.9_all.deb"
+  },
+  {
+    "package": "libglib2.0-dev-bin:amd64",
+    "version": "2.80.0-6ubuntu3.9",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/g/glib2.0/libglib2.0-dev-bin_2.80.0-6ubuntu3.9_amd64.deb",
+    "sha256": "a25df95147a20a1748b5e110650670b6453dc972284b85d14e2b4a53c934b4da",
+    "filename": "libglib2.0-dev-bin_2.80.0-6ubuntu3.9_amd64.deb"
+  },
+  {
+    "package": "libglib2.0-dev:amd64",
+    "version": "2.80.0-6ubuntu3.9",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/g/glib2.0/libglib2.0-dev_2.80.0-6ubuntu3.9_amd64.deb",
+    "sha256": "2f34111ef1c41179d610049c902e2622d433e648869abf267e17083c13aa6030",
+    "filename": "libglib2.0-dev_2.80.0-6ubuntu3.9_amd64.deb"
+  },
+  {
+    "package": "libicu74:amd64",
+    "version": "74.2-1ubuntu3.1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/i/icu/libicu74_74.2-1ubuntu3.1_amd64.deb",
+    "sha256": "c9a70989678660eed9a1e904c74fa043da8bec8e2036856fc16e31ced79b04f8",
+    "filename": "libicu74_74.2-1ubuntu3.1_amd64.deb"
+  },
+  {
+    "package": "libjsoncpp25:amd64",
+    "version": "1.9.5-6build1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/libj/libjsoncpp/libjsoncpp25_1.9.5-6build1_amd64.deb",
+    "sha256": "8efea5b75952f3ad1c40e6b5b31de687c297ea29f87f8b63efebb55e13467211",
+    "filename": "libjsoncpp25_1.9.5-6build1_amd64.deb"
+  },
+  {
+    "package": "libmount-dev:amd64",
+    "version": "2.39.3-9ubuntu6.6",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/u/util-linux/libmount-dev_2.39.3-9ubuntu6.6_amd64.deb",
+    "sha256": "87b7ed1fedfa79aedfb3772c539db2047857c4b0a3cf663161a657a752a3ca2e",
+    "filename": "libmount-dev_2.39.3-9ubuntu6.6_amd64.deb"
+  },
+  {
+    "package": "libpcre2-16-0:amd64",
+    "version": "10.42-4ubuntu2.1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/pcre2/libpcre2-16-0_10.42-4ubuntu2.1_amd64.deb",
+    "sha256": "06bba768fd16e6ea6f744114a0c500d9f5d98ee82630edf0d8a54f2175d3921b",
+    "filename": "libpcre2-16-0_10.42-4ubuntu2.1_amd64.deb"
+  },
+  {
+    "package": "libpcre2-32-0:amd64",
+    "version": "10.42-4ubuntu2.1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/pcre2/libpcre2-32-0_10.42-4ubuntu2.1_amd64.deb",
+    "sha256": "30f899441a422ae478426cc29871223cc9e37ef10b758acf807df52b417bfc5f",
+    "filename": "libpcre2-32-0_10.42-4ubuntu2.1_amd64.deb"
+  },
+  {
+    "package": "libpcre2-dev:amd64",
+    "version": "10.42-4ubuntu2.1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/pcre2/libpcre2-dev_10.42-4ubuntu2.1_amd64.deb",
+    "sha256": "933ac2723142126b6e01b588803dc6fa15a26205468524548e14af3cd48027e9",
+    "filename": "libpcre2-dev_10.42-4ubuntu2.1_amd64.deb"
+  },
+  {
+    "package": "libpcre2-posix3:amd64",
+    "version": "10.42-4ubuntu2.1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/pcre2/libpcre2-posix3_10.42-4ubuntu2.1_amd64.deb",
+    "sha256": "8660cea205a97cf6a97a5b7a0d601c2549f6d44d5083417eb2bbfcb9f137ee5f",
+    "filename": "libpcre2-posix3_10.42-4ubuntu2.1_amd64.deb"
+  },
+  {
+    "package": "libpkgconf3:amd64",
+    "version": "1.8.1-2build1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/pkgconf/libpkgconf3_1.8.1-2build1_amd64.deb",
+    "sha256": "fc3a57e8f931ec06cb7c51acc56878f1fec247ff02a7adcab26905c2faeb2792",
+    "filename": "libpkgconf3_1.8.1-2build1_amd64.deb"
+  },
+  {
+    "package": "libpython3-stdlib:amd64",
+    "version": "3.12.3-0ubuntu2.1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/python3-defaults/libpython3-stdlib_3.12.3-0ubuntu2.1_amd64.deb",
+    "sha256": "57ebb378c59d2f9ef479bee0abc933c560878cc10e2c3af8e05d6fdb2ed63da4",
+    "filename": "libpython3-stdlib_3.12.3-0ubuntu2.1_amd64.deb"
+  },
+  {
+    "package": "librhash0:amd64",
+    "version": "1.4.3-3build1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/r/rhash/librhash0_1.4.3-3build1_amd64.deb",
+    "sha256": "e9ee69963ff1a56378b9c5ffdd21ea0feaec9647c522349b7612b25103490528",
+    "filename": "librhash0_1.4.3-3build1_amd64.deb"
+  },
+  {
+    "package": "libselinux1-dev:amd64",
+    "version": "3.5-2ubuntu2.1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/libs/libselinux/libselinux1-dev_3.5-2ubuntu2.1_amd64.deb",
+    "sha256": "2cc37cb9251f49a11f9c34bc8605c2aace8ded76f50b951ad28ded42d6ab3f68",
+    "filename": "libselinux1-dev_3.5-2ubuntu2.1_amd64.deb"
+  },
+  {
+    "package": "libsepol-dev:amd64",
+    "version": "3.5-2build1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/libs/libsepol/libsepol-dev_3.5-2build1_amd64.deb",
+    "sha256": "85e47c1d7bcccbc059ea99d4c379659236f63b1716af8d796072875d418402bf",
+    "filename": "libsepol-dev_3.5-2build1_amd64.deb"
+  },
+  {
+    "package": "libuv1t64:amd64",
+    "version": "1.48.0-1.1build1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/libu/libuv1/libuv1t64_1.48.0-1.1build1_amd64.deb",
+    "sha256": "72a1856b30af1e533494ab90742a2446f4491b15ddebcade6661a6e8d61b4359",
+    "filename": "libuv1t64_1.48.0-1.1build1_amd64.deb"
+  },
+  {
+    "package": "libxml2:amd64",
+    "version": "2.9.14+dfsg-1.3ubuntu3.10",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/libx/libxml2/libxml2_2.9.14+dfsg-1.3ubuntu3.10_amd64.deb",
+    "sha256": "c5a065f85c1e6f605741e365e40cad71c3ceb0e85e2791400bd35b8896e12ad1",
+    "filename": "libxml2_2.9.14+dfsg-1.3ubuntu3.10_amd64.deb"
+  },
+  {
+    "package": "pkgconf-bin:amd64",
+    "version": "1.8.1-2build1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/pkgconf/pkgconf-bin_1.8.1-2build1_amd64.deb",
+    "sha256": "7a812f05ee1610154b433e2ad54f6e4163fcbb306b9fb31afe959afb2e5e1545",
+    "filename": "pkgconf-bin_1.8.1-2build1_amd64.deb"
+  },
+  {
+    "package": "pkgconf:amd64",
+    "version": "1.8.1-2build1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/pkgconf/pkgconf_1.8.1-2build1_amd64.deb",
+    "sha256": "834a58031069d97d7cfb8b2f5bfd5effc69cecf7f30cc362071875f1f8dc1828",
+    "filename": "pkgconf_1.8.1-2build1_amd64.deb"
+  },
+  {
+    "package": "python3-minimal:amd64",
+    "version": "3.12.3-0ubuntu2.1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/python3-defaults/python3-minimal_3.12.3-0ubuntu2.1_amd64.deb",
+    "sha256": "9ba5dd55cdcf6121c147dc5cb87403169b5933e3a56da0de57774f2ce819cf06",
+    "filename": "python3-minimal_3.12.3-0ubuntu2.1_amd64.deb"
+  },
+  {
+    "package": "python3-packaging",
+    "version": "24.0-1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/python-packaging/python3-packaging_24.0-1_all.deb",
+    "sha256": "decc936e9512c2de78fcf9e8d8459ce58952c40bf8bd1f06e62556d7fe887db6",
+    "filename": "python3-packaging_24.0-1_all.deb"
+  },
+  {
+    "package": "python3-pip",
+    "version": "24.0+dfsg-1ubuntu1.3",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/universe/p/python-pip/python3-pip_24.0+dfsg-1ubuntu1.3_all.deb",
+    "sha256": "4e1af0b6f0b52c847ffa7b192b9f650845b99ff300138af05ab9a6252eb75682",
+    "filename": "python3-pip_24.0+dfsg-1ubuntu1.3_all.deb"
+  },
+  {
+    "package": "python3-pkg-resources",
+    "version": "68.1.2-2ubuntu1.2",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/s/setuptools/python3-pkg-resources_68.1.2-2ubuntu1.2_all.deb",
+    "sha256": "13caaa69d5ba8b02e90087d4bcef714c0581e591e820804d15d12f582055147a",
+    "filename": "python3-pkg-resources_68.1.2-2ubuntu1.2_all.deb"
+  },
+  {
+    "package": "python3-setuptools",
+    "version": "68.1.2-2ubuntu1.2",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/s/setuptools/python3-setuptools_68.1.2-2ubuntu1.2_all.deb",
+    "sha256": "27ede03d8c5046c30cf1dcdc8835708408d27bdd3561e881b5d66656e6ff23e7",
+    "filename": "python3-setuptools_68.1.2-2ubuntu1.2_all.deb"
+  },
+  {
+    "package": "python3-wheel",
+    "version": "0.42.0-2",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/universe/w/wheel/python3-wheel_0.42.0-2_all.deb",
+    "sha256": "e1a4076425d3d1f1772b11bff6a025055723b2d0a4972f9519849ddaa8cd3953",
+    "filename": "python3-wheel_0.42.0-2_all.deb"
+  },
+  {
+    "package": "python3.12-minimal:amd64",
+    "version": "3.12.3-1ubuntu0.17",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/python3.12/python3.12-minimal_3.12.3-1ubuntu0.17_amd64.deb",
+    "sha256": "d452689b9660845345a4c3e05e4ad82c082d5474e04031b7aa47f1a6d5610a6e",
+    "filename": "python3.12-minimal_3.12.3-1ubuntu0.17_amd64.deb"
+  },
+  {
+    "package": "python3.12:amd64",
+    "version": "3.12.3-1ubuntu0.17",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/python3.12/python3.12_3.12.3-1ubuntu0.17_amd64.deb",
+    "sha256": "6745c9463432e619d7402b117ad4ac86c31dcd3999ba20daa9e395f6f9909d86",
+    "filename": "python3.12_3.12.3-1ubuntu0.17_amd64.deb"
+  },
+  {
+    "package": "python3:amd64",
+    "version": "3.12.3-0ubuntu2.1",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/p/python3-defaults/python3_3.12.3-0ubuntu2.1_amd64.deb",
+    "sha256": "e691b9cc40841c41bbdc50bd794c876cb1b1801306ea27b06e9a1458180df1e9",
+    "filename": "python3_3.12.3-0ubuntu2.1_amd64.deb"
+  },
+  {
+    "package": "uuid-dev:amd64",
+    "version": "2.39.3-9ubuntu6.6",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/u/util-linux/uuid-dev_2.39.3-9ubuntu6.6_amd64.deb",
+    "sha256": "266115cc3bcecef70b9f75c0cf8ca4daccd40958bf7872f8ccebec50502d2a13",
+    "filename": "uuid-dev_2.39.3-9ubuntu6.6_amd64.deb"
+  },
+  {
+    "package": "zlib1g-dev:amd64",
+    "version": "1:1.3.dfsg-3.1ubuntu2.2",
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261009T000000Z/pool/main/z/zlib/zlib1g-dev_1.3.dfsg-3.1ubuntu2.2_amd64.deb",
+    "sha256": "e9152a08af21ab22bc99e8bfa98f1eb83955b2cc3653bcefecab394ecf9d1b63",
+    "filename": "zlib1g-dev_1.3.dfsg-3.1ubuntu2.2_amd64.deb"
+  }
+]

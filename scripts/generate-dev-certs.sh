@@ -6,7 +6,8 @@ source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
 require_docker
 mkdir -p "${PROJECT_ROOT}/certs"
 
-docker build \
+docker build --network=none \
+  --build-arg "CERT_IMAGE=$(dependency_image runtime)" \
   --file "${PROJECT_ROOT}/Dockerfile.gateway" \
   --target cert-tools \
   --tag "${GATEWAY_IMAGE}-cert-tools" \

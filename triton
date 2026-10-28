@@ -19,6 +19,7 @@ the image metadata, SPDX SBOM, dependency-size reports and checksums.
   stop                  Stop the local Compose stack
   assemble [options]    Repackage compiled artifacts (see --help)
   artifacts             Collect provenance, SBOM and measurements
+  --clean               Rebuild every layer and compile from empty build directories
   --reuse-artifacts     For reproduce/build: reuse existing core/framework build
                         images; build the pinned Python backend and final image
   --export              For reproduce/artifacts: also save a portable image tar
@@ -31,6 +32,9 @@ if [[ "${command}" == assemble ]]; then exec "${root}/scripts/assemble.sh" "$@";
 build_args=()
 while [[ $# -gt 0 ]]; do
   case "$1" in
+    --clean)
+      [[ "${command}" == reproduce || "${command}" == build ]] || { echo "--clean requires reproduce or build." >&2; exit 2; }
+      build_args+=(--clean) ;;
     --reuse-artifacts)
       [[ "${command}" == reproduce || "${command}" == build ]] || { echo "--reuse-artifacts requires reproduce or build." >&2; exit 2; }
       build_args+=(--reuse-artifacts) ;;

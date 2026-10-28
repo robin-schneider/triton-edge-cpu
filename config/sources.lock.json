@@ -1,0 +1,717 @@
+{
+  "schema": 1,
+  "repositories": [
+    {
+      "id": "CMock-379a9a8d5dd5",
+      "url": "https://github.com/ThrowTheSwitch/CMock",
+      "commit": "379a9a8d5dd5cdff8fd345710dd70ae26f966c71",
+      "refs": []
+    },
+    {
+      "id": "ComputeLibrary-7f8a8ab512ad",
+      "url": "https://github.com/ARM-software/ComputeLibrary.git",
+      "commit": "7f8a8ab512ad8d1c1c207003ac5f96c4445da36f",
+      "refs": [
+        "refs/tags/v53.1.0"
+      ]
+    },
+    {
+      "id": "GSL-6f4529395c5b",
+      "url": "https://github.com/microsoft/GSL",
+      "commit": "6f4529395c5b7c2d661812257cd6780c67e54afa",
+      "refs": []
+    },
+    {
+      "id": "OpenCL-CLHPP-c7b4aded1cab",
+      "url": "https://github.com/KhronosGroup/OpenCL-CLHPP.git",
+      "commit": "c7b4aded1cab9560b226041dd962f63375a9a384",
+      "refs": [
+        "refs/tags/v2024.10.24"
+      ]
+    },
+    {
+      "id": "OpenCL-Headers-4ea6df132107",
+      "url": "https://github.com/KhronosGroup/OpenCL-Headers.git",
+      "commit": "4ea6df132107e3b4b9407f903204b5522fdffcd6",
+      "refs": [
+        "refs/tags/v2024.10.24"
+      ]
+    },
+    {
+      "id": "OpenCL-ICD-Loader-5907ac111407",
+      "url": "https://github.com/KhronosGroup/OpenCL-ICD-Loader.git",
+      "commit": "5907ac1114079de4383cecddf1c8640e3f52f92b",
+      "refs": [
+        "refs/tags/v2024.10.24"
+      ]
+    },
+    {
+      "id": "abseil-cpp-5dd240724366",
+      "url": "https://github.com/abseil/abseil-cpp.git",
+      "commit": "5dd240724366295970c613ed23d0092bcf392f18",
+      "refs": []
+    },
+    {
+      "id": "abseil-cpp-76bb24329e8b",
+      "url": "https://github.com/abseil/abseil-cpp.git",
+      "commit": "76bb24329e8bf5f39704eb10d21b9a80befa7c81",
+      "refs": [
+        "refs/tags/20250512.1"
+      ]
+    },
+    {
+      "id": "backend",
+      "url": "https://github.com/triton-inference-server/backend.git",
+      "commit": "cb3b36a77377d3d0492697eccd882508ac8c2198",
+      "refs": [
+        "refs/heads/r26.09"
+      ]
+    },
+    {
+      "id": "benchmark-12235e24652f",
+      "url": "https://github.com/google/benchmark",
+      "commit": "12235e24652fc7f809373e7c11a5f73c5763fc4c",
+      "refs": [
+        "refs/tags/v1.9.0"
+      ]
+    },
+    {
+      "id": "benchmark-344117638c8f",
+      "url": "https://github.com/google/benchmark",
+      "commit": "344117638c8ff7e239044fd0fa7085839fc03021",
+      "refs": [
+        "refs/tags/v1.8.3"
+      ]
+    },
+    {
+      "id": "benchmark-5b7683f49e1e",
+      "url": "https://github.com/google/benchmark.git",
+      "commit": "5b7683f49e1e9223cf9927b24f6fd3d6bd82e3f8",
+      "refs": [
+        "refs/tags/v1.2.0"
+      ]
+    },
+    {
+      "id": "benchmark-d572f4777349",
+      "url": "https://github.com/google/benchmark",
+      "commit": "d572f4777349d43653b21d6c2fc63020ab326db2",
+      "refs": [
+        "refs/tags/v1.7.1"
+      ]
+    },
+    {
+      "id": "bloaty-60209eb1ccc3",
+      "url": "https://github.com/google/bloaty.git",
+      "commit": "60209eb1ccc34d5deefb002d1b7f37545204f7f2",
+      "refs": []
+    },
+    {
+      "id": "boringssl-2b44a3701a47",
+      "url": "https://github.com/google/boringssl.git",
+      "commit": "2b44a3701a4788e1ef866ddc7f143060a3d196c9",
+      "refs": [
+        "refs/tags/0.20250415.0"
+      ]
+    },
+    {
+      "id": "c-ares-d3a507e920e7",
+      "url": "https://github.com/c-ares/c-ares.git",
+      "commit": "d3a507e920e7af18a5efb7f9f1d8044ed4750013",
+      "refs": [
+        "refs/tags/v1.34.5"
+      ]
+    },
+    {
+      "id": "capstone-852f46a467cb",
+      "url": "https://github.com/aquynh/capstone.git",
+      "commit": "852f46a467cb37559a1f3a18bd45d5ca8c6fc5e7",
+      "refs": []
+    },
+    {
+      "id": "cel-spec-9f069b3ee58b",
+      "url": "https://github.com/google/cel-spec",
+      "commit": "9f069b3ee58b02d6f6736c5ebd6587075c1a1b22",
+      "refs": [
+        "refs/tags/v0.24.0"
+      ]
+    },
+    {
+      "id": "cexception-71b47be7c950",
+      "url": "https://github.com/throwtheswitch/cexception.git",
+      "commit": "71b47be7c950f1bf5f7e5303779fa99a16224bb6",
+      "refs": []
+    },
+    {
+      "id": "civetweb-d7ba35bbb649",
+      "url": "https://github.com/civetweb/civetweb.git",
+      "commit": "d7ba35bbb649209c66e582d5a0244ba988a15159",
+      "refs": [
+        "refs/tags/v1.16"
+      ]
+    },
+    {
+      "id": "civetweb-eefb26f82b23",
+      "url": "https://github.com/civetweb/civetweb.git",
+      "commit": "eefb26f82b233268fc98577d265352720d477ba4",
+      "refs": [
+        "refs/tags/v1.15"
+      ]
+    },
+    {
+      "id": "common",
+      "url": "https://github.com/triton-inference-server/common.git",
+      "commit": "cc0e85d0cb0ec1e8abe1f57424eeb81ff1e1e671",
+      "refs": [
+        "refs/heads/r26.09"
+      ]
+    },
+    {
+      "id": "core",
+      "url": "https://github.com/triton-inference-server/core.git",
+      "commit": "b9ef1524379c71466ff66ea0fda4730ddd9eec80",
+      "refs": [
+        "refs/heads/r26.09"
+      ]
+    },
+    {
+      "id": "curl-cd95ee9f7713",
+      "url": "https://github.com/curl/curl.git",
+      "commit": "cd95ee9f771361acf241629d2fe5507e308082a2",
+      "refs": [
+        "refs/tags/curl-7_86_0"
+      ]
+    },
+    {
+      "id": "data-plane-api-6ef568cf4a67",
+      "url": "https://github.com/envoyproxy/data-plane-api.git",
+      "commit": "6ef568cf4a67362849911d1d2a546fd9f35db2ff",
+      "refs": []
+    },
+    {
+      "id": "demumble-01098eab821b",
+      "url": "https://github.com/nico/demumble.git",
+      "commit": "01098eab821b33bd31b9778aea38565cd796aa85",
+      "refs": []
+    },
+    {
+      "id": "dlpack-365b823cedb2",
+      "url": "https://github.com/dmlc/dlpack",
+      "commit": "365b823cedb281cd0240ca601aba9b78771f91a3",
+      "refs": [
+        "refs/tags/v0.8"
+      ]
+    },
+    {
+      "id": "emsdk-c0bb220cb6e6",
+      "url": "https://github.com/emscripten-core/emsdk.git",
+      "commit": "c0bb220cb6e6f4e0fabb6f6db9efd53390ef5e56",
+      "refs": []
+    },
+    {
+      "id": "flatbuffers-595bf0007ab1",
+      "url": "https://github.com/google/flatbuffers.git",
+      "commit": "595bf0007ab1929570c7671f091313c8fc20644e",
+      "refs": [
+        "refs/tags/v24.3.25"
+      ]
+    },
+    {
+      "id": "gflags-8411df715cf5",
+      "url": "https://github.com/gflags/gflags.git",
+      "commit": "8411df715cf522606e3b1aca386ddfc0b63d34b4",
+      "refs": []
+    },
+    {
+      "id": "gflags-e171aa2d15ed",
+      "url": "https://github.com/gflags/gflags.git",
+      "commit": "e171aa2d15ed9eb17054558e0b3a6a413bb01067",
+      "refs": [
+        "refs/tags/v2.2.2"
+      ]
+    },
+    {
+      "id": "googleapis-2193a2bfcecb",
+      "url": "https://github.com/googleapis/googleapis.git",
+      "commit": "2193a2bfcecb92b92aad7a4d81baa428cafd7dfd",
+      "refs": []
+    },
+    {
+      "id": "googletest-03e2ed1291b4",
+      "url": "https://github.com/openvinotoolkit/googletest.git",
+      "commit": "03e2ed1291b40062be24df240f597d995aaaa962",
+      "refs": []
+    },
+    {
+      "id": "googletest-52eb8108c5bd",
+      "url": "https://github.com/google/googletest.git",
+      "commit": "52eb8108c5bdec04579160ae17225d66034bd723",
+      "refs": [
+        "refs/tags/v1.17.0"
+      ]
+    },
+    {
+      "id": "googletest-565f1b848215",
+      "url": "https://github.com/google/googletest.git",
+      "commit": "565f1b848215b77c3732bca345fe76a0431d8b34",
+      "refs": []
+    },
+    {
+      "id": "googletest-5ec7f0c4a113",
+      "url": "https://github.com/google/googletest.git",
+      "commit": "5ec7f0c4a113e2f18ac2c6cc7df51ad6afc24081",
+      "refs": []
+    },
+    {
+      "id": "googletest-b796f7d44681",
+      "url": "https://github.com/google/googletest",
+      "commit": "b796f7d44681514f58a683a3a71ff17c94edb0c1",
+      "refs": [
+        "refs/tags/v1.13.0",
+        "refs/tags/v1.13.0-pre"
+      ]
+    },
+    {
+      "id": "googletest-e2239ee6043f",
+      "url": "https://github.com/google/googletest.git",
+      "commit": "e2239ee6043f73722e7aa812a459f54a28552929",
+      "refs": [
+        "refs/tags/release-1.11.0"
+      ]
+    },
+    {
+      "id": "googletest-f8d7d77c0693",
+      "url": "https://github.com/google/googletest",
+      "commit": "f8d7d77c06936315286eb55f8de22cd23c188571",
+      "refs": [
+        "refs/tags/v1.14.0",
+        "refs/tags/v1.14.0-pre"
+      ]
+    },
+    {
+      "id": "grpc-e84a8a2f0409",
+      "url": "https://github.com/grpc/grpc.git",
+      "commit": "e84a8a2f04095f2772ba42a4abccde4f9243e75b",
+      "refs": [
+        "refs/tags/v1.81.1"
+      ]
+    },
+    {
+      "id": "ittapi-ca45fef1a12c",
+      "url": "https://github.com/intel/ittapi.git",
+      "commit": "ca45fef1a12cef3316e6ff362a4d36571270e392",
+      "refs": []
+    },
+    {
+      "id": "json-9cca280a4d0c",
+      "url": "https://github.com/nlohmann/json",
+      "commit": "9cca280a4d0ccf0c08f47a99aa71d1b0e52f8d03",
+      "refs": [
+        "refs/tags/v3.11.3"
+      ]
+    },
+    {
+      "id": "json-bc889afb4c5b",
+      "url": "https://github.com/nlohmann/json",
+      "commit": "bc889afb4c5bf1c0d8ee29ef35eaaf4c8bef8a5d",
+      "refs": [
+        "refs/tags/v3.11.2"
+      ]
+    },
+    {
+      "id": "kleidiai-dc50c2e68d2e",
+      "url": "https://github.com/ARM-software/kleidiai.git",
+      "commit": "dc50c2e68d2eb28efe17c835c754f1d6421f30e8",
+      "refs": [
+        "refs/tags/v1.26.0",
+        "refs/tags/v1.26.0-rc1"
+      ]
+    },
+    {
+      "id": "level-zero-b77ced661af9",
+      "url": "https://github.com/oneapi-src/level-zero.git",
+      "commit": "b77ced661af97104f5cda03d49596274392f6aa4",
+      "refs": [
+        "refs/tags/v1.29.0"
+      ]
+    },
+    {
+      "id": "level-zero-npu-extensions-f9ad3bf89c24",
+      "url": "https://github.com/intel/level-zero-npu-extensions.git",
+      "commit": "f9ad3bf89c2418d714aef2e6b96a5aafb12a1971",
+      "refs": []
+    },
+    {
+      "id": "libevent-5df3037d1055",
+      "url": "https://github.com/libevent/libevent.git",
+      "commit": "5df3037d10556bfcb675bc73e516978b75fc7bc7",
+      "refs": [
+        "refs/tags/release-2.1.12-stable"
+      ]
+    },
+    {
+      "id": "libprotobuf-mutator-7a2ed51a6b68",
+      "url": "https://github.com/google/libprotobuf-mutator.git",
+      "commit": "7a2ed51a6b682a83e345ff49fc4cfd7ca47550db",
+      "refs": []
+    },
+    {
+      "id": "libxsmm-13df674c4b73",
+      "url": "https://github.com/libxsmm/libxsmm.git",
+      "commit": "13df674c4b73a1b84f6456de8595903ebfbb43e0",
+      "refs": []
+    },
+    {
+      "id": "mlas-d1bc25ec4660",
+      "url": "https://github.com/openvinotoolkit/mlas.git",
+      "commit": "d1bc25ec4660cddd87804fcf03b2411b5dfb2e94",
+      "refs": []
+    },
+    {
+      "id": "ncc-63e59ed312ba",
+      "url": "https://github.com/nithinn/ncc.git",
+      "commit": "63e59ed312ba7a946779596e86124c1633f67607",
+      "refs": []
+    },
+    {
+      "id": "oneDNN-babb7375ff50",
+      "url": "https://github.com/oneapi-src/oneDNN.git",
+      "commit": "babb7375ff500dd8ad77d26cbd2b044122b7a8b4",
+      "refs": []
+    },
+    {
+      "id": "oneDNN-f82d833de6f1",
+      "url": "https://github.com/openvinotoolkit/oneDNN.git",
+      "commit": "f82d833de6f13fac4bb1926d521ca8fec4f4ae01",
+      "refs": []
+    },
+    {
+      "id": "onnx-2bb50465112f",
+      "url": "https://github.com/onnx/onnx.git",
+      "commit": "2bb50465112feca9003e1ed654d77f01ff1415ca",
+      "refs": []
+    },
+    {
+      "id": "onnx-e709452ef2bb",
+      "url": "https://github.com/onnx/onnx.git",
+      "commit": "e709452ef2bbc1d113faf678c24e6d3467696e83",
+      "refs": [
+        "refs/tags/v1.18.0"
+      ]
+    },
+    {
+      "id": "onnxruntime",
+      "url": "https://github.com/microsoft/onnxruntime",
+      "commit": "f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7",
+      "refs": [
+        "refs/heads/rel-1.30.0"
+      ]
+    },
+    {
+      "id": "onnxruntime_backend",
+      "url": "https://github.com/triton-inference-server/onnxruntime_backend.git",
+      "commit": "1d2778ae7c052cbd80eedfed4ab30ae304bd030f",
+      "refs": [
+        "refs/heads/r26.09"
+      ]
+    },
+    {
+      "id": "opencensus-proto-4aa53e15cbf1",
+      "url": "https://github.com/census-instrumentation/opencensus-proto.git",
+      "commit": "4aa53e15cbf1a47bc9087e6cfdca214c1eea4e89",
+      "refs": [
+        "refs/tags/v0.3.0"
+      ]
+    },
+    {
+      "id": "opentelemetry-cpp-4bd64c9a336f",
+      "url": "https://github.com/open-telemetry/opentelemetry-cpp.git",
+      "commit": "4bd64c9a336fd438d6c4c9dad2e6b61b0585311f",
+      "refs": [
+        "refs/tags/v1.13.0"
+      ]
+    },
+    {
+      "id": "opentelemetry-cpp-ced79860f8c8",
+      "url": "https://github.com/open-telemetry/opentelemetry-cpp",
+      "commit": "ced79860f8c8a091a2eabfee6d47783f828a9b59",
+      "refs": [
+        "refs/tags/v1.19.0"
+      ]
+    },
+    {
+      "id": "opentelemetry-proto-2bd940b2b77c",
+      "url": "https://github.com/open-telemetry/opentelemetry-proto",
+      "commit": "2bd940b2b77c1ab57c27166af21384906da7bb2b",
+      "refs": [
+        "refs/tags/v1.5.0"
+      ]
+    },
+    {
+      "id": "opentelemetry-proto-60fa8754d890",
+      "url": "https://github.com/open-telemetry/opentelemetry-proto.git",
+      "commit": "60fa8754d890b5c55949a8c68dcfd7ab5c2395df",
+      "refs": []
+    },
+    {
+      "id": "opentelemetry-proto-c4dfbc51f3cd",
+      "url": "https://github.com/open-telemetry/opentelemetry-proto",
+      "commit": "c4dfbc51f3cd4089778555a2ac5d9bc093ed2956",
+      "refs": [
+        "refs/tags/v1.0.0"
+      ]
+    },
+    {
+      "id": "opentracing-cpp-06b57f48ded1",
+      "url": "https://github.com/opentracing/opentracing-cpp.git",
+      "commit": "06b57f48ded1fa3bdd3d4346f6ef29e40e08eaf5",
+      "refs": []
+    },
+    {
+      "id": "openvino",
+      "url": "https://github.com/openvinotoolkit/openvino.git",
+      "commit": "759c5a6ab8c066af5f4bc5ebd04643706012a37d",
+      "refs": [
+        "refs/tags/2026.3.1"
+      ]
+    },
+    {
+      "id": "openvino_backend",
+      "url": "https://github.com/triton-inference-server/openvino_backend.git",
+      "commit": "faa592c69408560c65f5f7b96dc95d4c19c6b452",
+      "refs": [
+        "refs/heads/r26.09"
+      ]
+    },
+    {
+      "id": "prometheus-cpp-76470b3ec024",
+      "url": "https://github.com/jupp0r/prometheus-cpp.git",
+      "commit": "76470b3ec024c8214e1f4253fb1f4c0b28d3df94",
+      "refs": [
+        "refs/tags/v1.0.1"
+      ]
+    },
+    {
+      "id": "prometheus-cpp-c9ffcdda9086",
+      "url": "https://github.com/jupp0r/prometheus-cpp",
+      "commit": "c9ffcdda9086ffd9e1283ea7a0276d831f3c8a8d",
+      "refs": [
+        "refs/tags/v1.1.0"
+      ]
+    },
+    {
+      "id": "prometheus-cpp-e5fada43131d",
+      "url": "https://github.com/jupp0r/prometheus-cpp",
+      "commit": "e5fada43131d251e9c4786b04263ce98b6767ba5",
+      "refs": [
+        "refs/tags/v1.3.0"
+      ]
+    },
+    {
+      "id": "protobuf-b6f9284da830",
+      "url": "https://github.com/protocolbuffers/protobuf.git",
+      "commit": "b6f9284da830b69be787732ffdaa35049d20a088",
+      "refs": [
+        "refs/tags/v33.5",
+        "refs/tags/v4.33.5-objectivec"
+      ]
+    },
+    {
+      "id": "protobuf-bc1773c42c9c",
+      "url": "https://github.com/protocolbuffers/protobuf.git",
+      "commit": "bc1773c42c9c3c522145a3119e989e0dff2a8d54",
+      "refs": []
+    },
+    {
+      "id": "protobuf-f0dc78d7e6e3",
+      "url": "https://github.com/protocolbuffers/protobuf.git",
+      "commit": "f0dc78d7e6e331b8c6bb2d5283e06aa26883ca7c",
+      "refs": [
+        "refs/tags/v21.12",
+        "refs/tags/v3.21.12"
+      ]
+    },
+    {
+      "id": "protoc-gen-validate-7b06248484ce",
+      "url": "https://github.com/envoyproxy/protoc-gen-validate.git",
+      "commit": "7b06248484ceeaa947e93ca2747eccf336a88ecc",
+      "refs": [
+        "refs/tags/v1.2.1",
+        "refs/tags/v1.2.1-SNAPSHOT.0"
+      ]
+    },
+    {
+      "id": "pugixml-ee86beb30e49",
+      "url": "https://github.com/zeux/pugixml.git",
+      "commit": "ee86beb30e4973f5feffe3ce63bfa4fbadf72f38",
+      "refs": [
+        "refs/tags/v1.15"
+      ]
+    },
+    {
+      "id": "pybind11-3e9dfa286694",
+      "url": "https://github.com/pybind/pybind11",
+      "commit": "3e9dfa2866941655c56877882565e7577de6fc7b",
+      "refs": [
+        "refs/tags/v2.12.0"
+      ]
+    },
+    {
+      "id": "pybind11-45fab4087eaa",
+      "url": "https://github.com/pybind/pybind11.git",
+      "commit": "45fab4087eaaff234227a10cf7845e8b07f28a98",
+      "refs": [
+        "refs/tags/v3.0.2"
+      ]
+    },
+    {
+      "id": "pybind11-941f45bcb514",
+      "url": "https://github.com/pybind/pybind11.git",
+      "commit": "941f45bcb51457884fa1afd6e24a67377d70f75c",
+      "refs": [
+        "refs/tags/v2.13.1"
+      ]
+    },
+    {
+      "id": "pybind11-a2e59f0e7065",
+      "url": "https://github.com/pybind/pybind11.git",
+      "commit": "a2e59f0e7065404b44dfe92a28aca47ba1378dc4",
+      "refs": [
+        "refs/tags/v2.13.6"
+      ]
+    },
+    {
+      "id": "python_backend",
+      "url": "https://github.com/triton-inference-server/python_backend.git",
+      "commit": "945764622b31dc48e881e6fb109971503a29c637",
+      "refs": [
+        "refs/heads/r26.09"
+      ]
+    },
+    {
+      "id": "pytorch_backend",
+      "url": "https://github.com/triton-inference-server/pytorch_backend.git",
+      "commit": "df1a20dfc352b22ff8c7bc2165bc8c9f5d137531",
+      "refs": [
+        "refs/heads/r26.09"
+      ]
+    },
+    {
+      "id": "re2-0c5616df9c0a",
+      "url": "https://github.com/google/re2.git",
+      "commit": "0c5616df9c0aaa44c9440d87422012423d91c7d1",
+      "refs": [
+        "refs/tags/2022-04-01"
+      ]
+    },
+    {
+      "id": "re2-5bd613749fd5",
+      "url": "https://github.com/google/re2",
+      "commit": "5bd613749fd530b576b890283bfb6bc6ea6246cb",
+      "refs": [
+        "refs/tags/2019-09-01"
+      ]
+    },
+    {
+      "id": "server",
+      "url": "https://github.com/triton-inference-server/server.git",
+      "commit": "818762530159ad144f7eee99bd264adcd9389e44",
+      "refs": [
+        "refs/heads/r26.09"
+      ]
+    },
+    {
+      "id": "snappy-2c94e11145f0",
+      "url": "https://github.com/google/snappy.git",
+      "commit": "2c94e11145f0b7b184b831577c93e5a41c4c0346",
+      "refs": [
+        "refs/tags/1.2.1"
+      ]
+    },
+    {
+      "id": "telemetry-8abddc3dbc8b",
+      "url": "https://github.com/openvinotoolkit/telemetry.git",
+      "commit": "8abddc3dbc8beb04a39b5ea40cbba5020317102f",
+      "refs": []
+    },
+    {
+      "id": "third_party",
+      "url": "https://github.com/triton-inference-server/third_party.git",
+      "commit": "c6deb23dacce1e4c303a2df00a5aa5eea68da007",
+      "refs": [
+        "refs/heads/r26.09"
+      ]
+    },
+    {
+      "id": "unity-4389bab82ee8",
+      "url": "https://github.com/throwtheswitch/unity.git",
+      "commit": "4389bab82ee8a4b4631a03be2e07dd5c67dab2d4",
+      "refs": []
+    },
+    {
+      "id": "vcpkg-8eb57355a4ff",
+      "url": "https://github.com/Microsoft/vcpkg",
+      "commit": "8eb57355a4ffb410a2e94c07b4dca2dffbee8e50",
+      "refs": [
+        "refs/tags/2023.10.19"
+      ]
+    },
+    {
+      "id": "vcpkg-fba75d09065f",
+      "url": "https://github.com/Microsoft/vcpkg",
+      "commit": "fba75d09065fcc76a25dcf386b1d00d33f5175af",
+      "refs": [
+        "refs/tags/2024.02.14"
+      ]
+    },
+    {
+      "id": "xbyak-0d67fd153001",
+      "url": "https://github.com/herumi/xbyak.git",
+      "commit": "0d67fd1530016b7c56f3cd74b3fca920f4c3e2b4",
+      "refs": [
+        "refs/tags/v7.23.1"
+      ]
+    },
+    {
+      "id": "xbyak_riscv-07139a6df394",
+      "url": "https://github.com/herumi/xbyak_riscv.git",
+      "commit": "07139a6df3942e4afa447c0885c50f3dacfab2f3",
+      "refs": [
+        "refs/tags/v1.00"
+      ]
+    },
+    {
+      "id": "xds-ee656c7534f5",
+      "url": "https://github.com/cncf/xds.git",
+      "commit": "ee656c7534f5d7dc23d44dd611689568f72017a6",
+      "refs": []
+    },
+    {
+      "id": "yaml-cpp-da82fd982c26",
+      "url": "https://github.com/jbeder/yaml-cpp.git",
+      "commit": "da82fd982c260e7f335ce5acbceff24b270544d1",
+      "refs": []
+    },
+    {
+      "id": "zlib-51b7f2abdade",
+      "url": "https://github.com/madler/zlib.git",
+      "commit": "51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf",
+      "refs": [
+        "refs/tags/v1.3.1"
+      ]
+    },
+    {
+      "id": "zlib-cacf7f1d4e3d",
+      "url": "https://github.com/madler/zlib",
+      "commit": "cacf7f1d4e3d44d871b605da3b647f07d718623f",
+      "refs": [
+        "refs/tags/v1.2.11"
+      ]
+    },
+    {
+      "id": "zlib-f1f503da85d5",
+      "url": "https://github.com/madler/zlib",
+      "commit": "f1f503da85d52e56aae11557b4d79a42bcaa2b86",
+      "refs": []
+    }
+  ]
+}

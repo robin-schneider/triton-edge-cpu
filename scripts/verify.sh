@@ -42,7 +42,7 @@ docker compose --project-directory "${PROJECT_ROOT}" up --detach --build
 for _ in $(seq 1 60); do
   if docker run --rm --network triton-cpu \
     --volume "${PROJECT_ROOT}/certs:/certs:ro" \
-    curlimages/curl:8.16.0 --fail --silent --show-error \
+    "$(locked_image curl)" --fail --silent --show-error \
     --cacert /certs/ca.crt https://gateway:8443/v2/health/ready >/dev/null; then
     break
   fi
@@ -52,7 +52,7 @@ done
 curl_container=(
   docker run --rm --network triton-cpu
   --volume "${PROJECT_ROOT}/certs:/certs:ro"
-  curlimages/curl:8.16.0 --fail --silent --show-error
+  "$(locked_image curl)" --fail --silent --show-error
   --cacert /certs/ca.crt
 )
 "${curl_container[@]}" https://gateway:8443/v2/health/live >/dev/null
@@ -63,7 +63,7 @@ docker run --rm \
   --network triton-cpu \
   --volume "${PROJECT_ROOT}/certs:/certs:ro" \
   --volume "${PROJECT_ROOT}/tests:/tests:ro" \
-  fullstorydev/grpcurl:v1.9.3 \
+  "$(locked_image grpcurl)" \
   -cacert /certs/ca.crt \
   -authority gateway \
   -import-path /tests \

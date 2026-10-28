@@ -16,17 +16,7 @@ tooling_run bash -Eeuo pipefail -c '
   python3 ./build.py --dryrun "$@"
 ' generate "${SOURCE_DIR}" "${TRITON_BUILD_ARGS[@]}"
 
-# NVIDIA's OpenVINO backend generator enables Intel GPU and NPU plugins by
-# default on x86-64 and exposes no forwarding option for their CMake flags.
-# Put the reviewed downstream patch in the build context and make the generated
-# backend clone apply it before its own nested Docker build.
-mkdir -p "${SOURCE_DIR}/.cpu-build"
-cp "${PROJECT_ROOT}/patches/openvino-cpu-only.patch" \
-  "${SOURCE_DIR}/.cpu-build/openvino-cpu-only.patch"
-sed -i \
-  's#; git --git-dir openvino/.git log#; git -C openvino apply /workspace/.cpu-build/openvino-cpu-only.patch; git --git-dir openvino/.git log#' \
-  "${GENERATED_DIR}/cmake_build"
-grep -q -- 'git -C openvino apply /workspace/.cpu-build/openvino-cpu-only.patch' \
-  "${GENERATED_DIR}/cmake_build"
-
-echo "Generated NVIDIA build stages in ${GENERATED_DIR}"
+OPENVINO_BUILD_NUMBER="${OPENVINO_BUILD_NUMBER}" \
+  ONNXRUNTIME_BUILD_BRANCH="${ONNXRUNTIME_BUILD_BRANCH}" \
+  ONNXRUNTIME_BUILD_ABBREV="${ONNXRUNTIME_BUILD_ABBREV}" python3 "${PROJECT_ROOT}/scripts/lock-generated.py"
+echo "Generated locked NVIDIA build stages in ${GENERATED_DIR}"

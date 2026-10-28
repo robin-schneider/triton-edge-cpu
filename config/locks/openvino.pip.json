@@ -1,0 +1,1 @@
+[{"name": "packaging", "version": "24.0"}, {"name": "patchelf", "version": "0.17.2.0"}, {"name": "pip", "version": "24.0"}, {"name": "SCons", "version": "4.11.1"}, {"name": "setuptools", "version": "68.1.2"}, {"name": "wheel", "version": "0.42.0"}]

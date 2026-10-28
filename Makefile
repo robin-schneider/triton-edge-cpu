@@ -8,7 +8,7 @@ reproduce: ## Fetch, build, test BLS/inference and collect all artifacts.
 help:
 	@awk 'BEGIN {FS = ":.*## "} /^[a-zA-Z_-]+:.*## / {printf "%-12s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-bootstrap: ## Build tooling and fetch the exact pinned Triton source.
+bootstrap: ## Fetch locked sources/artifacts and reconstruct offline dependency images.
 	./scripts/bootstrap.sh
 
 generate: bootstrap ## Generate (but do not execute) NVIDIA's build stages.

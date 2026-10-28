@@ -77,10 +77,13 @@ if ! grep -qx 'TRITON_SERVER_GPU_ENABLED=0' <<< "${source_env}" \
 fi
 [[ $(docker image inspect "${source_image}" --format '{{.Os}}/{{.Architecture}}') == linux/amd64 ]] \
   || { echo 'This recipe requires a Linux x86-64 source image.' >&2; exit 2; }
-docker build -f "${PROJECT_ROOT}/Dockerfile.runtime" -t "${output_image}" \
+docker build --network=none -f "${PROJECT_ROOT}/Dockerfile.runtime" -t "${output_image}" \
+  --build-arg "RUNTIME_IMAGE=$(dependency_image runtime)" \
   --build-arg "UPSTREAM_IMAGE=${source_image}" --build-arg "BACKENDS=${backends}" \
   --build-arg "OPENVINO_FRONTENDS=${frontends}" --build-arg "KEEP_ONNX_TOOLS=${keep_tools}" \
   --build-arg "DEDUP_OPENVINO=${dedup}" --build-arg "STRIP_DEBUG=${strip_debug}" "${PROJECT_ROOT}"
+epoch=$(git -C "${PROJECT_ROOT}/.work/sources/checkouts/server" show -s --format=%ct HEAD)
+tooling_run python3 "${PROJECT_ROOT}/scripts/normalize-image.py" "${output_image}" "${output_image}" --epoch "${epoch}"
 report_dir="${PROJECT_ROOT}/artifacts/assemblies/${output_image//[^a-zA-Z0-9._-]/_}"
 mkdir -p "${report_dir}"
 printf 'source_image=%s\nsource_id=%s\nbackends=%s\nopenvino_frontends=%s\nkeep_onnx_tools=%s\ndedup_openvino=%s\nstrip_debug=%s\n' \

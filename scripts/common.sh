@@ -40,11 +40,19 @@ require_docker() {
   }
 }
 
+locked_image() {
+  python3 "${PROJECT_ROOT}/scripts/dependencies.py" image "$1"
+}
+
+dependency_image() {
+  python3 "${PROJECT_ROOT}/scripts/dependencies.py" tag "$1"
+}
+
 build_tooling_image() {
-  docker build \
-    --file "${PROJECT_ROOT}/Dockerfile.tooling" \
-    --tag "${TOOLING_IMAGE}" \
-    "${PROJECT_ROOT}"
+  if ! docker image inspect "$(dependency_image core)" >/dev/null 2>&1; then
+    "${PROJECT_ROOT}/scripts/prepare-dependencies.sh"
+  fi
+  docker tag "$(dependency_image core)" "${TOOLING_IMAGE}"
 }
 
 tooling_run() {
@@ -63,21 +71,29 @@ tooling_run() {
     )
   fi
 
-  args+=("${TOOLING_IMAGE}" "$@")
+  args+=("$(dependency_image core)" "$@")
   "${args[@]}"
 }
 
 assert_source_lock() {
-  [[ -d "${SOURCE_DIR}/.git" ]] || {
-    echo "Triton source is absent. Run: make bootstrap" >&2
-    exit 1
+  python3 "${PROJECT_ROOT}/scripts/sources.py" --verify
+  python3 - "${PROJECT_ROOT}/config/sources.lock.json" "${TRITON_SOURCE_COMMIT}" "${PYTHON_BACKEND_COMMIT}" <<'PYLOCK'
+import json,sys
+rows={r['id']:r['commit'] for r in json.load(open(sys.argv[1]))['repositories']}
+if rows['server']!=sys.argv[2] or rows['python_backend']!=sys.argv[3]:
+    sys.exit('build.env source commits do not match sources.lock.json')
+PYLOCK
+  [[ "${TRITON_GPU_BASE_IMAGE}" == "$(locked_image nvidia-min)" ]] || {
+    echo 'GPU base image does not match images.lock.json.' >&2; exit 1;
   }
   local actual
-  actual="$(tooling_run git -C "${SOURCE_DIR}" rev-parse HEAD)"
-  if [[ "${actual}" != "${TRITON_SOURCE_COMMIT}" ]]; then
-    echo "Source lock mismatch: expected ${TRITON_SOURCE_COMMIT}, got ${actual}" >&2
-    exit 1
-  fi
+  actual=$(git -C "${SOURCE_DIR}" rev-parse HEAD)
+  [[ "${actual}" == "${TRITON_SOURCE_COMMIT}" ]] || {
+    echo "Generator source mismatch: ${actual}" >&2; exit 1;
+  }
+  [[ -z $(git -C "${SOURCE_DIR}" status --porcelain --untracked-files=no) ]] || {
+    echo 'Generator source has tracked modifications.' >&2; exit 1;
+  }
 }
 
 set_build_args() {
@@ -106,6 +122,7 @@ set_build_args() {
     "--repo-tag=backend:${TRITON_GIT_REF}"
     "--repo-tag=thirdparty:${TRITON_GIT_REF}"
     "--backend=pytorch:${TRITON_GIT_REF}"
+    "--override-backend-cmake-arg=pytorch:TRITON_PYTORCH_DOCKER_IMAGE=$(locked_image pytorch)"
     "--backend=onnxruntime:${TRITON_GIT_REF}"
     "--backend=openvino:${TRITON_GIT_REF}"
     --override-backend-cmake-arg=onnxruntime:TRITON_ENABLE_ONNXRUNTIME_OPENVINO=OFF

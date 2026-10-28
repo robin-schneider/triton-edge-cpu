@@ -1,0 +1,10 @@
+[
+  {
+    "name": "patchelf",
+    "version": "0.17.2.0"
+  },
+  {
+    "name": "SCons",
+    "version": "4.11.1"
+  }
+]

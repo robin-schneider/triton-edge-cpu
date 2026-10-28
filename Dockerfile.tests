@@ -1,6 +1,4 @@
-# syntax=docker/dockerfile:1.7
-FROM python:3.12-slim AS tests
-RUN pip install --no-cache-dir torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu \
-    && pip install --no-cache-dir numpy==2.2.6 onnx==1.19.0 openvino==2025.3.0 'tritonclient[http,grpc]==2.60.0'
+ARG TEST_IMAGE
+FROM ${TEST_IMAGE} AS tests
 COPY tests /tests
 ENTRYPOINT ["python"]

@@ -1,0 +1,49 @@
+[
+  {
+    "filename": "cmake-4.0.3-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+    "url": "https://files.pythonhosted.org/packages/60/cb/1e4d8baab7c946f809d6c59914428c10acaf39d9f4b52e1dffff834a9f0a/cmake-4.0.3-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+    "sha256": "d840e780c48c5df1330879d50615176896e8e6eee554507d21ce8e2f1a5f0ff8",
+    "name": "cmake",
+    "version": "4.0.3",
+    "wheel_tags": [
+      "py3-none-manylinux2014_x86_64",
+      "py3-none-manylinux_2_17_x86_64"
+    ]
+  },
+  {
+    "filename": "numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+    "url": "https://files.pythonhosted.org/packages/65/af/aa78d1a88805456e212b65461354cd943197fb9acecc4c90fd12295123a3/numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+    "sha256": "b7e18c623bb5c95acb3b3328861272816ba199fb531921c5d6d0b675f1fde9e3",
+    "name": "numpy",
+    "version": "2.5.3",
+    "wheel_tags": [
+      "cp312-cp312-manylinux_2_27_x86_64",
+      "cp312-cp312-manylinux_2_28_x86_64"
+    ]
+  },
+  {
+    "filename": "packaging-26.3-py3-none-any.whl",
+    "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+    "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+    "name": "packaging",
+    "version": "26.3",
+    "wheel_tags": [
+      "py3-none-any"
+    ]
+  },
+  {
+    "filename": "patchelf-0.17.2.0-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.musllinux_1_1_x86_64.whl",
+    "url": "https://files.pythonhosted.org/packages/2d/d3/92c27afa61ab5259d35f6283f1d401d61019d56a77ca00d29ba77ffd36df/patchelf-0.17.2.0-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.musllinux_1_1_x86_64.whl",
+    "sha256": "1b9fd14f300341dc020ae05c49274dd1fa6727eabb4e61dd7fb6fb3600acd26e",
+    "name": "patchelf",
+    "version": "0.17.2.0",
+    "wheel_tags": [
+      "py2-none-manylinux1_x86_64",
+      "py2-none-manylinux_2_5_x86_64",
+      "py2-none-musllinux_1_1_x86_64",
+      "py3-none-manylinux1_x86_64",
+      "py3-none-manylinux_2_5_x86_64",
+      "py3-none-musllinux_1_1_x86_64"
+    ]
+  }
+]

@@ -1,13 +1,8 @@
-# syntax=docker/dockerfile:1.7
-ARG ALPINE_VERSION=3.22
-ARG NGINX_VERSION=1.29.2-alpine-slim
-
-FROM alpine:${ALPINE_VERSION} AS cert-tools
-RUN apk add --no-cache openssl
+ARG CERT_IMAGE=docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55
+FROM ${CERT_IMAGE} AS cert-tools
 ENTRYPOINT ["openssl"]
 
-FROM nginx:${NGINX_VERSION} AS gateway
+FROM docker.io/library/nginx:1.29.2-alpine-slim@sha256:91fff1c842f0da2bbfb6df7d727d74e0a7ad01cb1fa9415f2f9bfa8b0aa5d62d AS gateway
 COPY gateway/nginx.conf /etc/nginx/nginx.conf
 RUN rm -f /etc/nginx/conf.d/default.conf
 EXPOSE 8443 8444
-

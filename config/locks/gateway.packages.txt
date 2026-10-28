@@ -1,0 +1,21 @@
+alpine-baselayout-3.7.0-r0 - Alpine base dir structure and init scripts
+alpine-baselayout-data-3.7.0-r0 - Alpine base dir structure and init scripts
+alpine-keys-2.5-r0 - Public keys for Alpine Linux packages
+alpine-release-3.22.2-r0 - Alpine release data
+apk-tools-2.14.9-r3 - Alpine Package Keeper - package manager for alpine
+busybox-1.37.0-r19 - Size optimized toolbox of many common UNIX utilities
+busybox-binsh-1.37.0-r19 - busybox ash /bin/sh
+ca-certificates-bundle-20250911-r0 - Pre generated bundle of Mozilla certificates
+gettext-envsubst-0.24.1-r0 - GNU gettext envsubst binary
+libapk2-2.14.9-r3 - Alpine Package Keeper - package manager for alpine
+libcrypto3-3.5.4-r0 - Crypto library from openssl
+libintl-0.24.1-r0 - GNU gettext runtime library
+libssl3-3.5.4-r0 - SSL shared libraries
+musl-1.2.5-r10 - the musl c library (libc) implementation
+musl-utils-1.2.5-r10 - the musl c library (libc) implementation
+nginx-1.29.2-r1 - High performance web server
+pcre2-10.43-r1 - Perl-compatible regular expression library
+scanelf-1.3.8-r1 - Scan ELF binaries for stuff
+ssl_client-1.37.0-r19 - External ssl_client for busybox wget
+tzdata-2025b-r0 - Timezone data
+zlib-1.3.1-r2 - A compression/decompression Library

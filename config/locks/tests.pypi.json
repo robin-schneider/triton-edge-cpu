@@ -1,0 +1,154 @@
+[
+  {
+    "name": "aiohappyeyeballs",
+    "version": "2.7.1"
+  },
+  {
+    "name": "aiohttp",
+    "version": "3.14.4"
+  },
+  {
+    "name": "aiosignal",
+    "version": "1.4.0"
+  },
+  {
+    "name": "attrs",
+    "version": "26.1.0"
+  },
+  {
+    "name": "brotli",
+    "version": "1.2.0"
+  },
+  {
+    "name": "certifi",
+    "version": "2026.7.22"
+  },
+  {
+    "name": "filelock",
+    "version": "3.32.3"
+  },
+  {
+    "name": "frozenlist",
+    "version": "1.8.0"
+  },
+  {
+    "name": "fsspec",
+    "version": "2026.7.0"
+  },
+  {
+    "name": "gevent",
+    "version": "26.9.0"
+  },
+  {
+    "name": "geventhttpclient",
+    "version": "2.6.1"
+  },
+  {
+    "name": "greenlet",
+    "version": "3.5.6"
+  },
+  {
+    "name": "grpcio",
+    "version": "1.67.1"
+  },
+  {
+    "name": "idna",
+    "version": "3.20"
+  },
+  {
+    "name": "Jinja2",
+    "version": "3.1.6"
+  },
+  {
+    "name": "MarkupSafe",
+    "version": "3.0.3"
+  },
+  {
+    "name": "ml_dtypes",
+    "version": "0.6.0"
+  },
+  {
+    "name": "mpmath",
+    "version": "1.3.0"
+  },
+  {
+    "name": "multidict",
+    "version": "6.9.1"
+  },
+  {
+    "name": "networkx",
+    "version": "3.6.1"
+  },
+  {
+    "name": "numpy",
+    "version": "2.2.6"
+  },
+  {
+    "name": "onnx",
+    "version": "1.19.0"
+  },
+  {
+    "name": "openvino",
+    "version": "2025.3.0"
+  },
+  {
+    "name": "openvino-telemetry",
+    "version": "2025.2.0"
+  },
+  {
+    "name": "packaging",
+    "version": "26.3"
+  },
+  {
+    "name": "pip",
+    "version": "25.0.1"
+  },
+  {
+    "name": "propcache",
+    "version": "0.5.4"
+  },
+  {
+    "name": "protobuf",
+    "version": "5.29.6"
+  },
+  {
+    "name": "python-rapidjson",
+    "version": "1.25"
+  },
+  {
+    "name": "setuptools",
+    "version": "78.1.0"
+  },
+  {
+    "name": "sympy",
+    "version": "1.14.0"
+  },
+  {
+    "name": "torch",
+    "version": "2.8.0+cpu"
+  },
+  {
+    "name": "tritonclient",
+    "version": "2.60.0"
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0"
+  },
+  {
+    "name": "urllib3",
+    "version": "2.8.0"
+  },
+  {
+    "name": "yarl",
+    "version": "1.25.1"
+  },
+  {
+    "name": "zope.event",
+    "version": "6.2"
+  },
+  {
+    "name": "zope.interface",
+    "version": "8.6"
+  }
+]

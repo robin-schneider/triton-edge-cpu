@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.7
+ARG RUNTIME_IMAGE
 ARG UPSTREAM_IMAGE=local/triton-cpu-artifacts:26.09
 FROM ${UPSTREAM_IMAGE} AS runtime-files
 ARG BACKENDS=pytorch,onnxruntime,openvino,python
@@ -10,10 +10,8 @@ COPY scripts/assemble-runtime.sh /tmp/assemble-runtime.sh
 COPY LICENSE /tmp/project-license
 RUN bash /tmp/assemble-runtime.sh
 
-FROM ubuntu:24.04 AS runtime
-RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl \
-    && rm -rf /var/lib/apt/lists/* \
-    && userdel ubuntu && groupadd -g 1000 triton-server \
+FROM ${RUNTIME_IMAGE} AS runtime
+RUN userdel ubuntu && groupadd -g 1000 triton-server \
     && useradd -u 1000 -g 1000 -M triton-server
 ARG BACKENDS=pytorch,onnxruntime,openvino,python
 COPY --from=runtime-files /runtime-root/ /

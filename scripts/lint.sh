@@ -6,6 +6,7 @@ source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
 require_docker
 build_tooling_image
 tooling_run shellcheck triton scripts/*.sh
+python3 -m unittest discover -s tests -p 'test_build_locks.py'
 docker compose --project-directory "${PROJECT_ROOT}" config --quiet
 docker compose --project-directory "${PROJECT_ROOT}" -f compose.yaml -f tests/compose.yaml config --quiet
 ./scripts/assemble.sh --help >/dev/null

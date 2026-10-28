@@ -1,0 +1,189 @@
+{
+  "schema": 1,
+  "archives": [
+    {
+      "id": "core-googletest",
+      "environment": "core",
+      "name": "googletest",
+      "url": "https://github.com/google/googletest/archive/9406a60c7839052e4944ea4dbc8344762a89f9bd.zip",
+      "sha256": "cb8a5a524b3f4867de8e60d16c1e412d860bc0ed8cac049db67e568b37dbbcbb",
+      "filename": "9406a60c7839052e4944ea4dbc8344762a89f9bd.zip"
+    },
+    {
+      "id": "openvino-node-addon-api",
+      "environment": "openvino",
+      "name": "node-addon-api",
+      "url": "https://github.com/nodejs/node-addon-api/archive/refs/tags/v8.9.0.tar.gz",
+      "sha256": "d3c35d47f57461a49826349928da4913cb467d81288549973b7f9335f5d4c001",
+      "filename": "v8.9.0.tar.gz"
+    },
+    {
+      "id": "openvino-node-api-headers",
+      "environment": "openvino",
+      "name": "node-api-headers",
+      "url": "https://github.com/nodejs/node-api-headers/archive/refs/tags/v1.9.0.tar.gz",
+      "sha256": "071f773bd10479f865f6828b86fe8232d63e255290d9bbb7a0ec487c57310231",
+      "filename": "v1.9.0.tar.gz"
+    },
+    {
+      "id": "onnxruntime-googletest",
+      "environment": "onnxruntime",
+      "name": "googletest",
+      "url": "https://github.com/google/googletest/archive/refs/tags/v1.17.0.zip",
+      "filename": "v1.17.0.zip",
+      "sha256": "40d4ec942217dcc84a9ebe2a68584ada7d4a33a8ee958755763278ea1c5e18ff"
+    },
+    {
+      "id": "onnxruntime-protobuf",
+      "environment": "onnxruntime",
+      "name": "protobuf",
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.6/protobuf-33.6.tar.gz",
+      "filename": "protobuf-33.6.tar.gz",
+      "sha256": "16498d7dc7967e9b100632138babd4b86b61592beeccdd556f67539d9c231355"
+    },
+    {
+      "id": "onnxruntime-onnxruntime_curl",
+      "environment": "onnxruntime",
+      "name": "onnxruntime_curl",
+      "url": "https://github.com/curl/curl/releases/download/curl-8_21_0/curl-8.21.0.tar.xz",
+      "filename": "curl-8.21.0.tar.xz",
+      "sha256": "aa1b66a70eace83dc624508745646c08ae561de512ab403adffb93ac87fc72e6"
+    },
+    {
+      "id": "onnxruntime-pybind11_project",
+      "environment": "onnxruntime",
+      "name": "pybind11_project",
+      "url": "https://github.com/pybind/pybind11/archive/refs/tags/v3.0.2.zip",
+      "filename": "v3.0.2.zip",
+      "sha256": "e3754d16ea536bdc968ce1464fa822e198a1217881d31bd9bf3d287fed2bbf4c"
+    },
+    {
+      "id": "onnxruntime-re2",
+      "environment": "onnxruntime",
+      "name": "re2",
+      "url": "https://github.com/google/re2/archive/refs/tags/2024-07-02.zip",
+      "filename": "2024-07-02.zip",
+      "sha256": "a835fe55fbdcd8e80f38584ab22d0840662c67f2feb36bd679402da9641dc71e"
+    },
+    {
+      "id": "onnxruntime-pytorch_cpuinfo",
+      "environment": "onnxruntime",
+      "name": "pytorch_cpuinfo",
+      "url": "https://github.com/pytorch/cpuinfo/archive/66ee79c038d70dad9f08705b2c9b3e58f6d8f512.zip",
+      "filename": "66ee79c038d70dad9f08705b2c9b3e58f6d8f512.zip",
+      "sha256": "b93044263ee072e9be3577bda52f48d5a4dd9fcb80091529471c8d2bfe59219d"
+    },
+    {
+      "id": "onnxruntime-mp11",
+      "environment": "onnxruntime",
+      "name": "mp11",
+      "url": "https://github.com/boostorg/mp11/archive/refs/tags/boost-1.82.0.zip",
+      "filename": "boost-1.82.0.zip",
+      "sha256": "81431bdc44c439a324e02c07ed067f8f556419fd86f2d8b486ff568df6aac899"
+    },
+    {
+      "id": "onnxruntime-safeint",
+      "environment": "onnxruntime",
+      "name": "safeint",
+      "url": "https://github.com/dcleblanc/SafeInt/archive/refs/tags/3.0.28.zip",
+      "filename": "3.0.28.zip",
+      "sha256": "3ffbd9a2fdff45da77da3e7269e9aa512ea43bed5c38ce8fd8f3d1068a032c3f"
+    },
+    {
+      "id": "onnxruntime-flatbuffers",
+      "environment": "onnxruntime",
+      "name": "flatbuffers",
+      "url": "https://github.com/google/flatbuffers/archive/refs/tags/v23.5.26.zip",
+      "filename": "v23.5.26.zip",
+      "sha256": "57bd580c0772fd1a726c34ab8bf05325293bc5f9c165060a898afa1feeeb95e1"
+    },
+    {
+      "id": "onnxruntime-dlpack",
+      "environment": "onnxruntime",
+      "name": "dlpack",
+      "url": "https://github.com/dmlc/dlpack/archive/5c210da409e7f1e51ddf445134a4376fdbd70d7d.zip",
+      "filename": "5c210da409e7f1e51ddf445134a4376fdbd70d7d.zip",
+      "sha256": "14e8b3f03ab7461f56b3fa7ffd4acfb6e6a65f895dc4b50548cab259229afcbd"
+    },
+    {
+      "id": "onnxruntime-date",
+      "environment": "onnxruntime",
+      "name": "date",
+      "url": "https://github.com/HowardHinnant/date/archive/refs/tags/v3.0.1.zip",
+      "filename": "v3.0.1.zip",
+      "sha256": "f4300b96f7a304d4ef9bf6e0fa3ded72159f7f2d0f605bdde3e030a0dba7cf9f"
+    },
+    {
+      "id": "onnxruntime-nlohmann_json",
+      "environment": "onnxruntime",
+      "name": "nlohmann_json",
+      "url": "https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.zip",
+      "filename": "v3.11.3.zip",
+      "sha256": "04022b05d806eb5ff73023c280b68697d12b93e1b7267a0b22a1a39ec7578069"
+    },
+    {
+      "id": "onnxruntime-cpp_client_telemetry",
+      "environment": "onnxruntime",
+      "name": "cpp_client_telemetry",
+      "url": "https://github.com/microsoft/cpp_client_telemetry/archive/refs/tags/v3.10.173.1.zip",
+      "filename": "v3.10.173.1.zip",
+      "sha256": "854e774b6d2c87e7a233b1c3c71dcf89ef009b8ff4ae38d30132802d44ddbe02"
+    },
+    {
+      "id": "onnxruntime-abseil_cpp",
+      "environment": "onnxruntime",
+      "name": "abseil_cpp",
+      "url": "https://github.com/abseil/abseil-cpp/archive/refs/tags/20250814.0.zip",
+      "filename": "20250814.0.zip",
+      "sha256": "b2bdcf6682d8cb53df365bcc5d6c318a22e55821d9978a10fdb61404c026daff"
+    },
+    {
+      "id": "onnxruntime-onnx",
+      "environment": "onnxruntime",
+      "name": "onnx",
+      "url": "https://github.com/onnx/onnx/archive/refs/tags/v1.22.0.zip",
+      "filename": "v1.22.0.zip",
+      "sha256": "8dc1181d33529a1249e031226126d0699ac9bdfc571ee530ee3a12f4656f2be3"
+    },
+    {
+      "id": "onnxruntime-onnxruntime_mbedtls",
+      "environment": "onnxruntime",
+      "name": "onnxruntime_mbedtls",
+      "url": "https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-3.6.7/mbedtls-3.6.7.tar.bz2",
+      "filename": "mbedtls-3.6.7.tar.bz2",
+      "sha256": "a7e8bcbec0e6f761b4af24f25677626b35f762f68eef79c08677a363212d11f6"
+    },
+    {
+      "id": "onnxruntime-eigen3",
+      "environment": "onnxruntime",
+      "name": "eigen3",
+      "url": "https://github.com/eigen-mirror/eigen/archive/1d8b82b0740839c0de7f1242a3585e3390ff5f33/eigen-1d8b82b0740839c0de7f1242a3585e3390ff5f33.zip",
+      "filename": "eigen-1d8b82b0740839c0de7f1242a3585e3390ff5f33.zip",
+      "sha256": "6a60d76351f97132669daeeb721d6bf14b008101883ad2d687a3201c5c461eb0"
+    },
+    {
+      "id": "onnxruntime-gsl",
+      "environment": "onnxruntime",
+      "name": "gsl",
+      "url": "https://github.com/microsoft/GSL/archive/refs/tags/v4.2.1.zip",
+      "filename": "v4.2.1.zip",
+      "sha256": "c9291d95f5f6e5c561990d06a589b01d89e553d0f366f0ce723dd1788e7a6076"
+    },
+    {
+      "id": "boost",
+      "environment": "core",
+      "name": "boost",
+      "url": "https://archives.boost.io/release/1.80.0/source/boost_1_80_0.tar.gz",
+      "filename": "boost_1_80_0.tar.gz",
+      "sha256": "4b2136f98bdd1f5857f1c3dea9ac2018effe65286cf251534b6ae20cc45e1847"
+    },
+    {
+      "id": "tbb",
+      "environment": "openvino",
+      "name": "tbb",
+      "url": "https://storage.openvinotoolkit.org/dependencies/thirdparty/linux/oneapi-tbb-2021.13.1-lin-release.tgz",
+      "filename": "oneapi-tbb-2021.13.1-lin-release.tgz",
+      "sha256": "93cf8ada4793044697f76179247c6a35ca0e47ee2a3a228fc9ed91703aa79730"
+    }
+  ]
+}

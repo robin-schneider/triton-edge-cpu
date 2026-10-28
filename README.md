@@ -1,7 +1,7 @@
 # CPU-only Triton Inference Server
 
 Build and run NVIDIA Triton 2.73.0 (release 26.09) on Linux x86-64 without a
-GPU. All compilation, packaging and testing runs in Docker. The default image
+GPU. Compilation, runtime packaging and inference tests run in Docker. The default image
 includes PyTorch, ONNX Runtime, OpenVINO and Python with business logic
 scripting (BLS), plus system shared memory and Triton's observability APIs.
 A separate NGINX gateway exposes HTTPS on `8443` and gRPCS on `8444`.
@@ -12,9 +12,11 @@ container runtime.
 
 ## Build and test
 
-Requirements: Docker Engine with Compose v2, network access to GitHub, Ubuntu
-package mirrors, Docker Hub and NGC. Allow roughly 32 GiB RAM and 150–200 GiB
-free disk for the full build. No host compiler or Python environment is needed.
+Requirements: Linux x86-64, Git, Python 3.12 (standard library only), Docker
+Engine with BuildKit and Compose v2. Initial input acquisition needs GitHub,
+Ubuntu snapshots, PyPI/PyTorch wheels, Boost/Intel release artifacts, Docker
+Hub and NVIDIA NGC. Compilation and packaging run with networking disabled. Allow roughly 32 GiB RAM and 150–200 GiB
+free disk for the full build. No host compiler or third-party Python packages are needed.
 
 ```bash
 ./triton
@@ -24,6 +26,8 @@ This fetches the locked sources, builds `local/tritonserver-cpu:26.09`, generate
 development TLS certificates, runs inference acceptance tests and collects
 provenance, an SPDX SBOM, size reports and checksums in `artifacts/26.09/`.
 The first build takes several hours; subsequent builds use Docker's cache.
+Use `./triton build --clean` to rebuild without cached build layers or compiled
+artifacts. See [input locks and clean validation](docs/reproducibility.md).
 Logs are saved in `artifacts/logs/`. The verified demo remains running.
 
 Tune `BUILD_JOBS` in `config/build.env` for available memory (roughly 2 GiB per
@@ -33,6 +37,7 @@ credentials in your environment, run `docker login nvcr.io`.
 | Command | Purpose |
 | --- | --- |
 | `./triton build` | Build without acceptance tests. |
+| `./triton build --clean` | Reconstruct dependencies and compile without cached layers. |
 | `./triton --reuse-artifacts` | Reuse compiled core/framework images; rebuild Python, package, test and collect reports. |
 | `./triton test` | Test the selected `TRITON_IMAGE`; leave the demo running. |
 | `./triton artifacts` | Regenerate provenance and reports. |

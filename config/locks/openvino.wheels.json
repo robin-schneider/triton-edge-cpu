@@ -1,0 +1,27 @@
+[
+  {
+    "filename": "scons-4.11.1-py3-none-any.whl",
+    "url": "https://files.pythonhosted.org/packages/8e/43/d6285848e893c19682c06e92679dc1a07d37ff7ea148747b1df681ec496c/scons-4.11.1-py3-none-any.whl",
+    "sha256": "454cef364348053422696e3d2ecb4fa593c96a624f955842eaaea64f95c8d11d",
+    "name": "SCons",
+    "version": "4.11.1",
+    "wheel_tags": [
+      "py3-none-any"
+    ]
+  },
+  {
+    "filename": "patchelf-0.17.2.0-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.musllinux_1_1_x86_64.whl",
+    "url": "https://files.pythonhosted.org/packages/2d/d3/92c27afa61ab5259d35f6283f1d401d61019d56a77ca00d29ba77ffd36df/patchelf-0.17.2.0-py2.py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.musllinux_1_1_x86_64.whl",
+    "sha256": "1b9fd14f300341dc020ae05c49274dd1fa6727eabb4e61dd7fb6fb3600acd26e",
+    "name": "patchelf",
+    "version": "0.17.2.0",
+    "wheel_tags": [
+      "py2-none-manylinux1_x86_64",
+      "py2-none-manylinux_2_5_x86_64",
+      "py2-none-musllinux_1_1_x86_64",
+      "py3-none-manylinux1_x86_64",
+      "py3-none-manylinux_2_5_x86_64",
+      "py3-none-musllinux_1_1_x86_64"
+    ]
+  }
+]

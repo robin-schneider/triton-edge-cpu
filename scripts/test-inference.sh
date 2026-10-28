@@ -23,7 +23,7 @@ done
 export TEST_LOAD_ARGS="${load_args}"
 test_image=local/triton-cpu-tests:26.09
 mkdir -p "${PROJECT_ROOT}/.work/test-models"
-docker build -f "${PROJECT_ROOT}/Dockerfile.tests" -t "${test_image}" "${PROJECT_ROOT}"
+docker build --network=none --build-arg "TEST_IMAGE=$(dependency_image tests)" -f "${PROJECT_ROOT}/Dockerfile.tests" -t "${test_image}" "${PROJECT_ROOT}"
 docker run --rm --user "$(id -u):$(id -g)" \
   --env HOME=/tmp \
   -v "${PROJECT_ROOT}/.work/test-models:/models" "${test_image}" /tests/generate_models.py

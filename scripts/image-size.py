@@ -1,6 +1,6 @@
 """Read a Docker filesystem export and attribute actual file bytes once.
 
-Runs in Dockerfile.tooling, using its Docker CLI and Python standard library.
+Runs in the locked compiler/tooling image, using its Docker CLI and Python standard library.
 It does not install anything into the host or production image.
 """
 import collections

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "cmake",
+    "version": "4.0.3"
+  },
+  {
+    "name": "numpy",
+    "version": "2.5.3"
+  },
+  {
+    "name": "packaging",
+    "version": "26.3"
+  },
+  {
+    "name": "patchelf",
+    "version": "0.17.2.0"
+  }
+]
